@@ -1,0 +1,41 @@
+Last session : Agile methodology & JIRA
+-------------------------------------------------------------------------
+Today's session : Version Control Softwares
+-------------------------------------------------------------------------
+-> In company multiple developers will be available to develop the project.
+
+-> All the developers will not work from same location.
+
+-> If developers are woring from multiple locations we will face below 2 problems
+
+		1) Code Integration
+		2) Monitoring Code Changes
+
+-> To avoid above 2 problems we will use Version Control Software For Project.
+
+-> Version Control Software will provide solution for code integration and providing monitored access for code.
+
+-> There are several version control softwares are available in market. They are
+
+
+		1) Clear Case
+
+		2) CVS
+
+		3) SVN
+
+		4) Git Hub
+
+		5) BitBucket etc..
+
+
+Working with GIT Hub
+-------------------
+-> Create account in Git Hub (Its free of cost)
+
+-> Install Git Client software
+
+
+
+
+

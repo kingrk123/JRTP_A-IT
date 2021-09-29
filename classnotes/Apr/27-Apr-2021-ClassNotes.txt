@@ -1,0 +1,38 @@
+Yesterday's session : Types of companies in IT industry
+-------------------------------------------------------------------------
+
+-> We can see 3 types of companies in IT industry
+
+	a) Product Based Companies
+	b) Service Based Companies
+	c) Outsourcing Companies
+
+------------------------------------------------------------------------
+Today's session : How many types of projects in companies
+-----------------------------------------------------------------------
+-> In IT companies we can see 3 types of projects
+
+		1) Scratch development projects 
+		2) Maintenence Projects 
+		3) Migration Projects
+
+
+-> If we develop a brand new project from the beginning then it is called as Scratch Development Project.
+
+-> The projects which are already running in the market will be under maintenence.
+
+-> In the maintenence projects we will have below types of works
+
+		1) Change Request
+		2) Enhancements
+		3) Bug Fixing
+
+
+-> If we are changing our project from one technology to another technolor then it is called as Migration Project.
+
+
+
+
+
+
+

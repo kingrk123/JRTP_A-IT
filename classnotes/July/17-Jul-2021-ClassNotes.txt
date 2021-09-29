@@ -1,0 +1,154 @@
+package in.ashokit.exception;
+
+public class NoDataFoundException extends Exception {
+
+	public NoDataFoundException() {
+		
+	}
+
+	public NoDataFoundException(String msg) {
+		super(msg);
+	}
+}
+-------------------------------------------------------------------------
+package in.ashokit.dao;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import in.ashokit.exception.NoDataFoundException;
+
+@Repository
+public class UserDao {
+
+	// In-Memory Database
+	private Map<Integer, String> usersData = new HashMap<>();
+
+	public UserDao() {
+		usersData.put(101, "Raju");
+		usersData.put(102, "Rani");
+	}
+
+	public String findNameById(Integer userId) throws Exception {
+		if (usersData.containsKey(userId)) {
+			String name = usersData.get(userId);
+			return name;
+		} else {
+			throw new NoDataFoundException("Invalid User ID");
+		}
+	}
+}
+-------------------------------------------------------------------------
+package in.ashokit.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import in.ashokit.dao.UserDao;
+
+@Service
+public class UserService {
+
+	@Autowired
+	private UserDao userdao;
+
+	public String getUsername(Integer userid) throws Exception {
+		return userdao.findNameById(userid);
+	}
+
+}
+-------------------------------------------------------------------------
+package in.ashokit.rest;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import in.ashokit.service.UserService;
+
+@RestController
+public class UserRestController {
+
+	@Autowired
+	private UserService userService;
+
+	@GetMapping(value = "/user/{userId}")
+	public ResponseEntity<String> getName(@PathVariable Integer userId) throws Exception {
+		String username = userService.getUsername(userId);
+		return new ResponseEntity<>(username, HttpStatus.OK);
+	}
+}
+-------------------------------------------------------------------------
+package in.ashokit.exception;
+
+import java.time.LocalDateTime;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+@RestControllerAdvice
+public class ExceptionMapper {
+
+	@ExceptionHandler(value = ArithmeticException.class)
+	public ResponseEntity<String> handleArithmeticException(ArithmeticException ae) {
+		System.out.println("****handleArithmeticException() method called*****");
+		return new ResponseEntity<>(ae.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+
+	@ExceptionHandler(value = NoDataFoundException.class)
+	public ResponseEntity<ErrorResponse> handleNoDataFoundException(NoDataFoundException ndfe) {
+		System.out.println("*****handleNoDataFoundException() method called*****");
+
+		ErrorResponse response = new ErrorResponse();
+		response.setErrorCode("ERR102");
+		response.setErrorMsg(ndfe.getMessage());
+		response.setErrorDateTime(LocalDateTime.now());
+
+		return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
+	}
+
+}
+-----------------------------------------------------------------------
+package in.ashokit.exception;
+
+import java.time.LocalDateTime;
+
+public class ErrorResponse {
+
+	private String errorCode;
+	private String errorMsg;
+	private LocalDateTime errorDateTime;
+
+	public String getErrorCode() {
+		return errorCode;
+	}
+
+	public void setErrorCode(String errorCode) {
+		this.errorCode = errorCode;
+	}
+
+	public String getErrorMsg() {
+		return errorMsg;
+	}
+
+	public void setErrorMsg(String errorMsg) {
+		this.errorMsg = errorMsg;
+	}
+
+	public LocalDateTime getErrorDateTime() {
+		return errorDateTime;
+	}
+
+	public void setErrorDateTime(LocalDateTime errorDateTime) {
+		this.errorDateTime = errorDateTime;
+	}
+
+}
+-------------------------------------------------------------------------

@@ -1,0 +1,166 @@
+12-May-2021 & 13-May-2021 : No classes
+-------------------------------------------------------------------------Last session : Maven Repositories (Central, Local and Remote)
+-------------------------------------------------------------------------
+-> Central Repo will be maintained by Apache Org
+
+-> In our machine Maven Local Repo will be available
+
+-> Every company will maintain their own Remote Repository
+-------------------------------------------------------------------------
+Today's session : Pom.xml tags
+-------------------------------------------------------------------------
+-> pom stands for project object model
+
+<project>
+     <groupId>in.ashokit</groupId>
+     <artifactId>01-Maven-App</artifactId>
+     <version>0.0.1-SNAPSHOT</version>
+     <packaging>jar</packaging>
+
+     <properties>
+	   <spring.version>5.3.7</spring.version>
+     </propertites>
+
+     <dependencies>
+	<dependency>
+	    <groupId>org.springframework</groupId> 
+	    <artifactId>spring-context</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>runtime</scope>
+        <dependency>
+	<dependency>
+	    <groupId>org.springframework</groupId> 
+	    <artifactId>spring-webmvc</artifactId>
+	    <version>${spring.version}</version>
+	    <scope>runtime</scope>
+        <dependency>
+     <dependencies>
+	
+     <build>
+	  <finalName>First-App</finalName>
+          <plugins>
+		<plugin>
+			.....
+		</plugin>
+	  </plugins>
+     </build>
+
+</project>
+-------------------------------------------------------------------------
+
+-> Maven dependency 'scope' decides when to include that dependency in class path.
+
+-> There are 6 scope elements available in maven
+
+		compile  --------- This is by default
+		provided
+		runtime
+		test
+		system
+		import
+-------------------------------------------------------------------------
+Q) How to exclude maven dependency in pom.xml?
+-------------------------------------------------------------------------
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+			</exclusions>
+
+		</dependency>
+
+-----------------------------------------------------------------------------------------------
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>in.ashokit</groupId>
+	<artifactId>03-Maven-App</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+
+	<properties>
+		<spring.version>5.3.6</spring.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>in.ashokit</groupId>
+			<artifactId>02-Pwd-Utils</artifactId>
+			<version>1.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>${spring.version}</version>
+
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework</groupId>
+					<artifactId>spring-aop</artifactId>
+				</exclusion>
+			</exclusions>
+
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>Maven-App</finalName>
+	</build>
+
+</project>
+-----------------------------------------------------------------------------------------------
+1) What is Maven ?
+
+2) What is Archetype selection in Maven?
+
+3) What is maven-archetype-quickstart ?
+
+4) What is the difference between src/main/java and src/test/java folders?
+
+5) What is the purpose of src/main/resources folder?
+
+6) What is pom.xml file ?
+
+7) What are maven goals available?
+
+8) What is the difference between clean and compile?
+
+9) What is the purpose of maven test goal?
+
+10) What is the purpose of maven package goal?
+
+11) What is the use of install goal?
+
+12) What is transitive dependency in maven?
+
+13) How to exclude dependency in maven?
+
+14) What is scope in maven?
+
+15) What repositories available in maven?
+
+16) What is settings.xml in maven?
+
+17) What is <finalName> tag in pom.xml ?
+
+18) What is Maven plugin?
+
+19) What is force update in maven?
+
+20) What is .m2 folder?
+---------------------------------------------------------------------------------------------
+Today's assignment : SDLC life cycle steps & Waterfall Methodology
+---------------------------------------------------------------------------------------------
+
+
+
+
+

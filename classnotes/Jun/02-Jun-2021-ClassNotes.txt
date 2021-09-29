@@ -1,0 +1,46 @@
+Last session : Application Environments & Deployment Process
+-------------------------------------------------------------------------
+-> For every project devops team will be available and they are responsible to create environments required for our application.
+
+-> We will send an email for devops team to create jobs for our application deployment.
+
+-> When we need to deploy the application we have to run the job which is created by devops team in jenkins software.
+-------------------------------------------------------------------------
+-> If our code is not working as expected in local env then we will use Debugging technique to understand the problem and we will fix it.
+
+-> If code is not working in higher environments then we will check log files to identify the problem.
+
+****** For every project logging will be implemented in realtime*********
+
+-> We will use 'Log Monitoring Tools' to check log messages of our application.
+
+		1) putty
+		2) winscp
+		3) splunk (Trending)
+
+-> Putty is a commandline based software (We have to execute commands to see log messages of our application)
+
+-> WinScp is a gui based application which is used to download log files from remote system to local system.
+
+-> Splunk is an advanced web application which is used for log monitoring.
+
+Maven
+GIT Hub
+BitBucket
+Source Tree
+Agile with JIRA
+Log4j
+Log Monitoring Tool
+Jenkins (Ci & Cd)
+
+
+
+
+
+		
+
+
+
+
+
+

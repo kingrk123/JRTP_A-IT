@@ -1,0 +1,58 @@
+20-Jul-2021 Session : What is Logging & Why Logging
+21-Jul-2021 Session : No Session
+22-Jul-2021 Session : How to implement Logging in application
+------------------------------------------------------------------------
+Logger
+Layout
+Appender
+------------------------------------------------------------------------
+Log Levels
+
+trace
+debug
+info
+warn
+error
+fatal
+
+Note: When we set log level, it will print from that level to all higher level msgs.
+
+	TRACE > DEBUG > INFO > WARN > ERROR > FATAL
+
+
+------------------------------------------------------------------------
+-> In realtime projects we will use logback to implement logging in our application.
+
+-> If logback.xml file available in clas path then Spring Boot will give first priority to logback
+
+-> If logback not available then it will execute default spring boot logging.
+------------------------------------------------------------------------
+-> If we store log msgs to single log file then file size will become very heavy.
+
+-> It would be difficult for the developers also if one log file having all messages.
+
+-> To overcome this problem we will use below types of appenders
+
+		1) Time Based Rolling File Appender
+
+		2) Size Based Rolling File Appender
+
+-----------------------------------------------------------------------
+logging.file.name=MyApp.log
+logging.pattern.rolling-file-name=MyApp-%d{yyyy-MM-dd}.%i.log
+logging.file.max-size=1MB
+logging.file.total-size-cap=10MB
+logging.file.max-history=30
+logging.file.clean-history-on-start=true
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

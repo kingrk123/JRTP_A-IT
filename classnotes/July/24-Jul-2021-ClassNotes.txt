@@ -1,0 +1,17 @@
+Last Session : What is Log Monitoring  & How to do it
+-----------------------------------------------------------------------
+Today's session : Code Review In 2nd Project
+-----------------------------------------------------------------------
+
+1) Run Sonar Qube Server
+
+2) Add Sonar Qube plugin in project pom.xml file
+
+3) Build Our Project using Maven Goals
+
+4) Run application with sonar goal
+
+	sonar:sonar
+
+5) Open Sonar dashboard and check the issues
+

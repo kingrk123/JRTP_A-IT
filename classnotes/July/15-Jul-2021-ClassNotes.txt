@@ -1,0 +1,101 @@
+Last session : Password En-cryption & De-Cryption
+-------------------------------------------------------------------------
+-> When we are dealing with sensitive data in our application then we will use Encryption and decryption techniques.
+
+-> The process of converting data from readable format to unreadable format is called as Encryption
+
+-> The process of converting data from un-readable format to readable format is called as De-Cryption.
+
+-----------------------------------------------------------------------
+In our application we are using pwd encryption & decryption at below places
+-------------------------------------------------------------------------
+
+-> When new user registered, our application will generate one temp-pwd. We are encrypting that temp-pwd and storing into db.
+
+Note: User will recieve email with temp-pwd to unlock his/her account.
+
+-> When user trying to unlock his/her account we will recieve temp-pwd user but in db temp-pwd available in encrypted mode.
+
+-> To unlock account, our code should encrypt the temp-pwd given by user then verify in db with email and encrypted temp-pwd a record is present or not.
+
+-> At the time of unlocking account we will encrypt new pwd given by user then we will update that in db.
+
+-> At the time of login, user will provide original pwd but in db user pwd stored with encryption.
+
+-> To check login functionality we need to encrypt the pwd given by user then verify with given email and encrypted pwd a record present in db or not.
+
+
+-----------------------------------------------------------------------
+package com.ashokit.util;
+
+import java.util.Base64;
+
+import javax.crypto.Cipher;
+import javax.crypto.spec.IvParameterSpec;
+import javax.crypto.spec.SecretKeySpec;
+
+public class PwdUtils {
+
+	private static final String SECRET_KEY = "abc123xyz123abcd";
+	private static final String INIT_VECTOR = "abc123xyz123abcd";
+
+	public static String encryptMsg(String msg) throws Exception {
+		IvParameterSpec ivParamSpec = new IvParameterSpec(INIT_VECTOR.getBytes());
+		
+		SecretKeySpec secretKeySpec = new SecretKeySpec(SECRET_KEY.getBytes("UTF-8"), "AES");
+		
+		Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+
+		cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec, ivParamSpec);
+
+		byte[] encrypted = cipher.doFinal(msg.getBytes());
+
+		return Base64.getEncoder().encodeToString(encrypted);
+	}
+
+	public static String decryptMsg(String msg) throws Exception {
+		IvParameterSpec ivParamSpec = new IvParameterSpec(INIT_VECTOR.getBytes());
+
+		SecretKeySpec secretKeySpec = new SecretKeySpec(SECRET_KEY.getBytes("UTF-8"), "AES");
+		
+		Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5PADDING");
+
+		cipher.init(Cipher.DECRYPT_MODE, secretKeySpec, ivParamSpec);
+
+		byte[] decodedMsg = Base64.getDecoder().decode(msg);
+
+		byte[] decrypted = cipher.doFinal(decodedMsg);
+
+		return new String(decrypted);
+
+	}
+}
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

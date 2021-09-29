@@ -1,0 +1,34 @@
+Course Name : Java Realtime Project Fullstack Development (15-JRTP)
+	      (Using SpringBoot, Microservices & Angular-11)
+
+Start Date: 22-Apr-2021
+
+Timings: 10 AM - 11:30 AM IST (Daily)
+-----------------------------------------------------------------------
+Session-1 (22-Apr-21) : https://www.youtube.com/watch?v=exSnWlLdT7E
+-----------------------------------------------------------------------
+Today ----> Session-2 : 23-Apr-2021
+------------------------------------------------------------------------
+
+Spring Boot & Microservices (Restul Services) - 5000 INR (09-SBMS)
+
+Java Reatlime Project : 6000 INR  (15-JRTP)
+
+Java-8 Features : 1500 INR
+
+Angular-11 with Typescript : FREE
+
+SPRING : FREE 
+
+
+
+
+
+
+
+
+
+
+
+
+

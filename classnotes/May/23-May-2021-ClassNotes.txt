@@ -1,0 +1,69 @@
+Last session : BitBucket 
+-------------------------------------------------------------------------
+-> BitBucket is an Atlasian company product
+
+-> BitBucket providing version control mechanism
+
+-> BitBucket internally uses git a version control software
+
+-> Bitbucket is having rich UI when compared with Git Hub.
+-------------------------------------------------------------------------
+-> We can use git bash as a client to communicate with BitBucket repositories.
+
+-> In Bitbucket also we can create both public and private repositories.
+
+-------------------------------------------------------------------------
+-> We can use Source Tree as a client software to communicate with BitBucket repositories.
+
+-> Source Tree is an open source GUI based application.
+-------------------------------------------------------------------------
+
+Interview Questions
+---------------------
+1) Which version control software is using in your project?
+
+2) Which client software you are using to perform operations in source code repository ?
+
+3) Who will create repository in your project?
+
+4) What are branches in repository and why we need them ?
+
+5) Have you ever faced conflicts ?
+
+6) What is pull request ?
+
+7) What is the difference between push and pull ?
+
+8) What is the difference between clone and pull?
+
+9) How code integration will happen in your project?
+
+10) Have you ever created repo in bitbucket ?
+
+11) Have you ever created branches ?
+
+12) What is branch locking?
+
+13) What is code freeze ?
+
+Maven
+Agile with JIRA
+Git Hub
+BitBucket
+Source Tree
+
+Debugging: https://www.youtube.com/watch?v=2WxsClYhreE
+
+
+
+
+
+
+
+
+
+
+
+
+
+

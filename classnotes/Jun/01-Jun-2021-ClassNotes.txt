@@ -1,0 +1,75 @@
+Last session : Application Environments
+-------------------------------------------------------------------------
+
+-> In Realtime every application will have multiple environments like below
+
+		1) Local Env
+		2) Dev Env
+		3) SIT Env (QA Env)
+		4) UAT Env
+		5) Pilot Env
+		6) Prod Env
+
+-> In Local env we will do the development 
+
+-> Dev env will be used by developers to perform Integration testing
+
+-> SIT env will be used by Testing Team to perform System Integration Testing
+
+-> UAT Env will be used by client side team to perform User Acceptance Testing.
+
+-> Pilot env is used to perform Cluster setup. Pilot is also called as Pre-Prod env.
+
+-> Prod env is used to for Live Deployment.
+-------------------------------------------------------------------------
+-> All these environments setup will be done by DevOps team.
+
+-> DevOps team will create Jobs in Jenkins Software for application deployment.
+-------------------------------------------------------------------------
+
+To : irctcdevops@ibm.com
+CC : irctc@ibm.com
+
+Subject : Jenkins Jobs Creation Request For IRCTC 
+
+Body : 
+
+Hi Team,
+
+Please create jenins jobs for IRCTC project for below environments
+
+1) DEV
+2) SIT
+3) UAT
+4) Pilot
+5) PROD
+
+BitBucket URL : <repo-url>
+
+Thanks,
+Ashok.
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

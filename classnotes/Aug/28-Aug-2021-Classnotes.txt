@@ -1,0 +1,38 @@
+Last session (25-Aug) : Parallel Instances for batches
+
+26-Aug & 27-Aug : No classes
+
+Today's session (28-Aug) : Overall IES architecture
+------------------------------------------------------------------------
+-> Benefit Issuance Module is used to send benefit amount to citizens who are approved for plans in IES
+
+-> Reports module is used to generate reports based on given scenario
+
+		1) daily reports
+
+		2) weekly reports
+
+		3) monthly reports
+
+		4) plan wise reports
+
+		5) plan status wise reports
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

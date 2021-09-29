@@ -1,0 +1,59 @@
+Last Session : Major Project Introduction
+----------------------------------------------------------------------------------
+Today's session: Major Project Details
+----------------------------------------------------------------------------------
+-> Our Major project name is IES
+
+-> IES stands for Integrated Eligibility System
+
+-> This project is developed for USA Rhode Island State Govt.
+
+-> Rhode Island State Govt is using this project to provide health and insurance plans for Rhode Island State Citizens.
+
+-> RI Govt is providing health & insurance plans for Rhode Island State Citizens based on some conditions (income, age, properties etc)
+
+-> Below are the health and insurance plans offering by IES for RI state citizens
+
+		1) SNAP
+		2) CCAP
+		3) Medicaid
+		4) Medicare
+		5) RIW
+		6) QHP
+----------------------------------------------------------------------------------
+-> SNAP (Supplemental Nutrition Assistence Program) is related food plan
+
+-> CCAP (Child Care Assistance Program) is realted to Kids
+
+-> Medicaid and Medicare plans are related Health Insurance
+
+-> RIW (Rhode Islands Works) is realted to Un-employeed people skills improvement plan
+
+-> QHP (Quality Health Plan) is commercial health plan with some discounts
+
+---------------------------------------------------------------------------------
+-> IES application is an Intranet Application.
+
+-> IES application is accessible only with in DHS offices
+
+-> DHS ofc employees only can access IES application.
+
+---------------------------------------------------------------------------------
+
+-> RI citizens should visit DHS ofc to apply for a Plan in IES.
+
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,94 @@
+Last session : RestController development
+------------------------------------------------------------------------
+Today's session : swagger documentation for Rest api
+------------------------------------------------------------------------
+
+-> Swagger is used to generate documentation for REST api
+
+-> Swagger UI is used for rest api testing. It provides user interface for testing.
+-------------------------------------------------------------------------
+
+1) Add below swagger dependencies in pom.xml file
+
+2) Create Swagger Config class
+
+-------------------------------------------------------------------------
+<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+-------------------------------------------------------------------------
+package com.ashokit.config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import springfox.documentation.RequestHandler;
+import springfox.documentation.builders.ApiInfoBuilder;
+import springfox.documentation.builders.PathSelectors;
+import springfox.documentation.builders.RequestHandlerSelectors;
+import springfox.documentation.service.ApiInfo;
+import springfox.documentation.spi.DocumentationType;
+import springfox.documentation.spring.web.plugins.Docket;
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
+
+@Configuration
+@EnableSwagger2
+public class SwaggerConfig {
+
+	@Bean
+	public Docket postsApi() {
+		return new Docket(DocumentationType.SWAGGER_2)
+					.groupName("public-api")
+					.apiInfo(apiInfo())
+					.select()
+					.apis(RequestHandlerSelectors.basePackage("com.ashokit.rest"))
+					.paths(PathSelectors.any()).build();
+	}
+
+	
+
+	private ApiInfo apiInfo() {
+		return new ApiInfoBuilder().title("Ashok IT API")
+				.description("Ashok IT API reference for developers")
+				.termsOfServiceUrl("http://www.ashokit.in")
+				.contact("ashokitschool@gmail.com")
+				.license("Ashok IT License")
+				.licenseUrl("ashokitschool@gmail.com")
+				.version("1.0")
+				.build();
+	}
+
+}
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,122 @@
+Last session : Maven Tool
+-------------------------------------------------------------------------
+Today' session : Agile Methodology
+-------------------------------------------------------------------------
+
+Q) What is SDLC ?
+
+Q) What is waterfall methodology ?
+
+-------------------------------------------------------------------------
+-> SDLC stands for Software development life cycle.
+
+-> It includes several phases in application development process
+
+		1) Requirements Gathering
+
+		2) Requirements Analysis
+
+		3) Design
+
+		4) Development
+
+		5) Testing
+
+		6) Deployment
+
+		7) Maintenence
+
+-> Waterfall methodology follows linear process in SDLC.
+
+-> In Waterfall methodology everything happens sequentially.
+
+-> In Waterfall methodology requirements & Project budget is fixed
+
+-> Waterfall methodology is suitable for small scale applications
+---------------------------------------------------------------------------------------------
+-> Now a days in industry Agile methology is using
+---------------------------------------------------------------------------------------------
+-> AGILE methodology is a practice that promotes continuous iteration of development and testing throughout the software development lifecycle of the project. 
+
+-> In the Agile model, both development and testing activities are concurrent, unlike the Waterfall model.
+
+-> Agile methodology is best sutiable for large scale applications.
+
+-> In Agile methodology requirements & budget is not fixed.
+
+-> All the given requirements will be divided into multiple releases in Agile methodology.
+----------------------------------------------------------------------------------------------
+Agile Terminology
+---------------------------------------------------------------------------------------------
+Product Owner
+
+Scrum Master
+
+Tech Lead
+
+Agile team members
+
+-> Product Owner is responsible for client deliverables
+
+-> Scrum Master is responsible to manage agile team
+
+-> Tech Lead is responsible to resolve any technical problems facing by agile team members
+
+-> Agile team contains both developers & testers (they will work paralelly)
+
+
+1) Story
+2) Story Points
+3) Backlog Grooming
+4) Backlog
+5) Sprint Planning
+6) Sprint
+7) Scrum
+8) Mid Iteration Review
+9) Release
+10) Retrospective
+
+-> Story means a task in the project
+
+	ex : logging in project, exception handling, unit testing, code review etc...
+
+-> Every story will have story points. Story points decides duration to complete the task
+
+		3 points --- 8 hours duration (1 day)
+
+		5 points --- 16 hours duration (2 days)
+
+		8 points ----24 hours duration (3 days)
+
+	Note: In the team anybody can create story and assign story points
+
+
+-> Backlog grooming is the meeting conducted by scrum master to identify pending tasks in the project. All the team members will join in the backlog grooming meeting will identify pending tasks in the project.
+
+-> For all the pending tasks stories will be created in JIRA that is called as Backlog bucket.
+
+		Note: The stories which are pending are called as Backlog Stories
+
+-> Scrum Master will conduct a meeting with Agile team to identify the stories to complete from backlog that meeting is called as Sprint Planning. All the team members will join in Sprint Planning session.
+
+-> The stories which are identified in Sprint Planning are called as one Sprint. Sprint will have start date and end date. Sprint duration will be 2 weeks (10 working days).
+
+-> Once sprint started everyday scrum master will conduct scrum call for 15-20 mins of time.
+In scrum call every team member will provide work status to scrum master (like which story    we are working on and what is the status and when it will complete).
+
+-> Mid Iteration review meeting will be conducted by Scrum Master to evoluate sprint stories once half of sprint duration got completed.
+
+-> Retrospective meeting will be conducted by Scrum Master to check sprint work.
+
+			1) Lessons learnt in previous sprint
+			2) Improvement areas
+			3) Achievements
+
+-> For every sprint we don't release project to client. After 3 to 4 sprints we will do one release to client.
+
+
+
+
+
+
+

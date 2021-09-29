@@ -1,0 +1,54 @@
+Last session : Agile methodology & Agile Terminology
+-------------------------------------------------------------------------
+
+-> Agile is an iterative approach to develop software applications.
+
+-> In Agile methodology developers & testers will work paralelly to complete the project.
+
+-> In Agile methodology requirements are not fixed.
+
+-------------------------------------------------------------------------Agile Terminology
+-------------------------------------------------------------------------
+-> Product Owner
+-> Scrum Master
+-> Tech Lead
+-> Agile Team
+
+-> Story
+-> Story Points
+-> Backlog Grooming
+-> Backlog
+-> Sprint Planning
+-> Sprint
+-> Scrum
+-> Mid-Iteration Review
+-> Retrospective
+-> Release
+
+-----------------------------------------------------------------------------------
+
+-> Agile project work will be managed by using JIRA software
+
+-> JIRA is an Atlasian company product.
+
+-> JIRA is used to manage project work and jira is used for bug reporting also.
+
+-> Software companies will purchase JIRA product from Atlasian company to manage projects work.
+
+Note: We can use trail version of jira to understand jira functionality
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

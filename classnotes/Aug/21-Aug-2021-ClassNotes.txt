@@ -1,0 +1,133 @@
+Last Session : Batches Frequency & Scheduling
+----------------------------------------------------------------------------------------------
+-> Once Eligibility got determined ED module will store data into below 2 tables
+
+		1)ED_ELIG_DETAILS
+		2)CO_TRIGGERS
+
+-> ED_ELIG_DETAILS table will maintain citizen plan eligibility details
+
+-> CO_TRIGGERS table will maintain notices details that we need to send to citizens
+----------------------------------------------------------------------------------------------
+create table co_triggers
+(
+	trg_id number,
+	case_num number,
+	create_dt date,
+	trg_status varchar2(10),
+	update_dt date,
+	primary key (trg_id)
+)
+--------------------------------------------------------------------------------------------
+ create table eligibility_details (
+        ed_trace_id number(10,0) not null,
+        benefit_amt varchar2(255),
+        case_num number(19,0),
+        create_dt date,
+        denial_reason varchar2(255),
+        plan_end_dt varchar2(255),
+        plan_name varchar2(255),
+        plan_start_dt varchar2(255),
+        plan_status varchar2(255),
+        update_dt date,
+        primary key (ed_trace_id)
+    )
+---------------------------------------------------------------------------------------------
+
+DECLARE
+i number:=1;
+ed_trace_id number:=100;
+case_no number:=1;
+BEGIN
+WHILE i <=10000 LOOP
+    insert into ELIGIBILITY_DETAILS values(ed_trace_id,'$600',case_no,sysdate,null,null,'SNAP',sysdate,'AP',null);
+    i:= i + 1;
+    ed_trace_id:=ed_trace_id +1;
+    case_no:=case_no+1;
+  END LOOP;
+END;
+/
+--------------------------------------------------------------------------------------------
+DECLARE
+i number:=1;
+trg_id number:=100;
+case_no number:=1;
+BEGIN
+WHILE i <=10000 LOOP
+    INSERT INTO CO_TRIGGERS(TRG_ID,CASE_NUM,CREATE_DT,TRG_STATUS,
+    UPDATE_DT)VALUES(trg_id,case_no,sysdate,'P',null);    
+    i:= i + 1;
+    trg_id:=trg_id +1;
+    case_no:=case_no+1;
+  END LOOP;
+END;
+/
+---------------------------------------------------------------------------------------------
+
+============================================================================================
+Steps to develop Batch For Generating Notices
+==============================================================================================
+1) Create Spring Boot Application with below dependencies
+
+		i) spring-boot-starter-web
+		ii) spring-boot-starter-data-jpa
+		iii) oracle driver
+		iv) project lombok
+		v) devtools
+		vi) itext
+
+2) Create Entity class and Repository interface for below tables
+
+		i) CO_TRIGGERS
+		ii) ELIGIBILITY_DETAILS
+
+Note: Table structure defined above
+
+3) Execute above pl/sql script to insert records into CO_TRIGGERS & ELIGIBILITY_DETAILS tables
+
+4) Create Service Interface with Implementation
+
+		public Integer processTriggers();
+
+Note: This method should retrieve all pending triggers available in CO_TRIGGERS table then it should generate a notice and update trigger as completed trigger.
+
+5) Create a Rest Controller to handle the request
+
+6) Configure below properties in application.properties file
+
+		1) server-port
+		2) datasource properties
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

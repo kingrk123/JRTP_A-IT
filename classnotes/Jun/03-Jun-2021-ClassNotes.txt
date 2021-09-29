@@ -1,0 +1,132 @@
+Last session : Log Monitoring Tools
+------------------------------------------------------------------------
+-> To identify the problems in application we will use log files
+
+-> To monitor log files we will use log monitoring tools
+
+	1) Putty (CLI Based)
+	2) WinScp (GUI Based)
+	3) Splunk - ( Web app )(Highly demanding tool)
+
+-> Devops team will provide details of remote mahcine or splunk URL to access logs of our application.
+-------------------------------------------------------------------------
+Maven : Build Tool (To automate application build process)
+
+GIT Hub : Version Control Software 
+
+BitBucket : Version Control Software
+
+Source Tree : Client software for BitBucket
+
+Agile with JIRA : Project Management Software
+
+Log4j : To perform logging in the application
+
+Putty, WinScp, Splunk : For logs monitoring
+
+Jenkins : To automate application deployment process (CI & CD)
+-----------------------------------------------------------------------------------
+Part-3 : Mini Projects Development
+-----------------------------------------------------------------------------------
+
+-> For next one month we will do Mini projects implementation
+
+Note: Everybody has to implement code for mini projects in this one month.
+
+-> We will implement these mini projects with Realtime standards.
+
+-> In these 3 mini projects we are going to use tools also.
+
+Note: Daily assignments will be available related to mini projects and assignment checking will be there. The zoom link will be provided only for assignment completed students.
+
+-----------------------------------------------------------------------------------
+
+What is project?
+----------------
+Set of programs we can call as a project
+
+Why we need to develop project?
+-------------------------------
+Software projects are used to reduce human efforts
+
+	Ex: Netbanking, Ticket Booking, Online Shopping
+
+----------------------------------------------------------------------------------
+
+-> Service based companies will take requirements from client and will develop the project based on client requirement.
+
+-> Product based companies will develop the product and will sell that product to public in the market.
+
+-----------------------------------------------------------------------------------
+
+-> In Every company functional team will be available.
+
+-> Functional team is responsible to collect requirements from the client.
+
+-> Functional team will prepare BRD (Bussiness Requirement Document).
+
+-> Functional team will submit BRD to client for approval.
+
+-> Client will review BRD and will approve BRD.
+
+-> Once BRD got approved, Functional team will prepare FDD (Functional Design Document).
+
+-> Functional team will share FDD to client for review
+
+-> Client will review FDD and will approve the FDD if everything is correct.
+
+-> Once FDD got approved, functional team will share FDD to Developers & Testers.
+
+-> Developers and Testers should read the FDD and should understand requirements clearly.
+
+-> If any developer or tester having doubts in FDD then they should note down their doubts and they should ask functional team for clarifications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

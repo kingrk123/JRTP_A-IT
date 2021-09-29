@@ -1,0 +1,75 @@
+Last session : BRD and FDD
+-------------------------------------------------------------------------
+-> BRD stands for Business Requirement Document
+
+-> BRD will be prepared by functional team
+
+-> BRD document contains highlevel requirements
+
+-> FDD stands for Functional Design Document
+
+-> FDD will be prepared by functional team
+
+-> FDD contains detailed information related to requirements
+
+-> Developers will write the code based on FDD provided information
+
+-> Testers will test the application behaviour based on FDD provided information
+
+-> Once FDD got approved by client, developers and testers will read the fdd and will notedown the queries on FDD.
+----------------------------------------------------------------------------------
+
+Q-1) Do we need client side validations or not?
+
+Q-2) What is minimum and maximum length for Name field?
+
+Q-3) Phone Number should take how many digits ?
+
+Q-4) Do we need to implement Soft-Delete or Hard-Delete?  - Softdelete
+
+Q-5) Can we save duplicate contact ? - No
+
+Q-6) Do we need to implement Pagination or not ? -
+
+-----------------------------------------------------------------------------------
+
+-> After understanding FDD, developers and testers will get some queries.
+
+-> Developers and testers will write their queries in query log document.
+
+-> Functional team will read query log and will answer queries
+
+-----------------------------------------------------------------------------------
+Today's assignment : Analyze how many classes/interfaces required for 01-mini project.
+
+-> Analyze methods which are required for each class with proper methodname, method parameters and method return type.
+
+
+
+
+ContactEntity.java
+--------------------
+
+
+ContactRepo.java
+-----------------
+
+
+ContactService.java
+---------------------
+
+
+ContactController.java
+-----------------------
+
+
+
+
+
+
+
+
+
+
+
+

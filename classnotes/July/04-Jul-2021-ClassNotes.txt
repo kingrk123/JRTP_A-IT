@@ -1,0 +1,21 @@
+Last session : How to read data from YML file into Java class
+-------------------------------------------------------------------------
+-> It is not at all recommended to hard code application messages in java program.
+
+-> If we want to change any message text then we have to modify our java program.
+
+-> If we modify source code then we have build and deploy the entire application.
+
+-> Building and Deploying entire application is time consuming process.
+-------------------------------------------------------------------------
+-> To avoid this problem we can store application messages in yml file and we can read from there.
+
+-> If we change any message text in yml, build and deployment is not required just server re-start is sufficient to load latest msgs from yml.
+
+-> Server restart will take 1-2 mins only.
+-------------------------------------------------------------------------
+
+
+
+
+

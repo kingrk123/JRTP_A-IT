@@ -1,0 +1,35 @@
+Yesterday's session : Introduction for Part-2 in 15-JRTP
+------------------------------------------------------------------------
+
+Build Tools
+-----------
+-> Build tools are used to automate application build process
+
+	Ex : Ant, Maven and Gradle etc...
+
+Note: Ant is outdated in market people are using Maven or Gradle as build tool for java projects development.
+
+-> Apache Organization provided Maven software to simplify application build process easy.
+
+Maven Main objectivies
+------------------------
+-> Make build process easy
+
+-> Maintain uniform build process
+
+-> Provide Quality information about project
+
+-> Encouraging Better development practises
+
+
+-> Download maven software using below url
+
+	https://maven.apache.org/download.cgi
+
+	(apache-maven-3.8.1-bin.zip)
+
+-> Extract maven zip file then add below 2 things in Environment variables
+
+		1) MAVEN_HOME
+
+		2) MAVEN PATH

@@ -1,0 +1,33 @@
+Yesterday's session : Maven Introduction
+-----------------------------------------
+-> Maven software provided by apache org
+
+-> Maven is a free & open-source software
+
+-> Maven is used to simplify java projects build process
+
+-> Maven follows uniform build process for all the applications
+
+-> Maven provides quality information related to project
+
+-> Maven is encouraging to follow better development practises
+
+-> Maven setup also got completed
+------------------------------------------------------------------------
+
+-> We can create maven project using cmd and using IDE also
+
+-> 'ArcheType' Selection is required to create maven project. It represents type of the project.
+	
+	quick-start : Java Standalone app
+
+	web-app : Java Web application
+
+
+
+
+
+
+
+
+

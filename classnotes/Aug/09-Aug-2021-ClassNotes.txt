@@ -1,0 +1,12 @@
+Last Session : IES Modules
+------------------------------------------------------------------------
+-> In IES application we are having below modules
+
+1) Admin
+2) Application Registration
+3) Data Collection
+4) Eligibility Determination
+5) Correspondence
+6) Benefit Issuance
+7) Batches
+8) Reports

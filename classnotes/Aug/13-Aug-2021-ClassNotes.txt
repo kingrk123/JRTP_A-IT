@@ -1,0 +1,57 @@
+10-Aug-2021: Modules in IES
+
+11-Aug & 12-Aug : No classes
+
+Today's session (13-Aug-2021) : Admin Module in IES
+----------------------------------------------------------------------------------
+1) Admin
+2) AR (Application Registration)
+3) DC (Data Collection)
+4) ED (Eligibility Determination)
+5) CO (Correspondence)
+6) BI (Benefit Issuance)
+7) Batches
+8) Reports
+----------------------------------------------------------------------------------
+Admin Module
+---------------------------------------------------------------------------------
+-> Our IES application will have one Super Admin
+
+-> Super Admin can create admins in our IES application. Every DHS office will have one Admin.
+
+-> Admins can create Case Workers In our application.
+
+-> When Admin create an account for Case Worker, then case worker will recieve one email from IES application to unlock his account.
+
+-> After unlocking the account Case Worker can login into IES application.
+
+-> Admin is having below 2 functionalities
+
+		1) User Account Management
+		2) Plan Management
+
+-> User Account Management Functionality Includes
+
+		1) Creating Account
+		2) View Accounts
+		3) Edit/Update Account
+		4) Delete Account
+
+-> Plan Management functionality includes
+
+		1) Create Plan
+		2) View Plans
+		3) Edit/Update Plan
+		4) Delete Plan
+
+---------------------------------------------------------------------------------
+Note: Our 01-Mini Project & 02-Mini Project Functionalities are included in Admin Module
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

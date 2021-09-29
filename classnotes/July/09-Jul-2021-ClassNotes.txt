@@ -1,0 +1,72 @@
+Last session : Email functionality in 02-Project
+-------------------------------------------------------------------------
+-> Once user registered in our application then our application is responsible to send email to the registered user to unlock his/her account
+
+-> In email body we need to display temporary password and hyperlink to unlock account.
+
+-> Email body content having some static text and some dynamic text.
+
+-> For email body we have created a text file (email body template)
+
+-> In our program we will read that mail body from text file and will replace with dynamic values and will use that for body.
+------------------------------------------------------------------------
+-> To read the data from text file in java we have below classes
+
+	1) FileReader
+	2) BufferedReader
+
+-> FileReader class will read the data from file character by character
+
+-> BufferedReader will read data from the file line by line
+
+Note: BufferedReader can't read the data from file directley. We will connect FileReader object with BufferedReader object to read data line by line.
+
+private String readUnlockAccEmailBody(UserAccountEntity entity) {
+		StringBuffer sb = new StringBuffer(AppConstants.EMPTY_STR);
+		String mailBody = AppConstants.EMPTY_STR;
+		try {
+			String fileName = appProps.getMessages().get(AppConstants.UNLOCK_ACC_EMAIL_BODY_FILE);
+			FileReader fr = new FileReader(fileName);
+			BufferedReader br = new BufferedReader(fr);
+			String line = br.readLine();
+
+			while (line != null) {
+				sb.append(line);
+				line = br.readLine();
+			}
+			br.close();
+
+			mailBody = sb.toString();
+			mailBody = mailBody.replaceAll(AppConstants.FNAME, entity.getFname());
+			mailBody = mailBody.replaceAll(AppConstants.LNAME, entity.getLname());
+			mailBody = mailBody.replaceAll(AppConstants.TEMP_PWD, entity.getPazzword());
+			mailBody = mailBody.replaceAll(AppConstants.EMAIL, entity.getEmail());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return mailBody;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

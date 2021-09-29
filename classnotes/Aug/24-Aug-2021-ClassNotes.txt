@@ -1,0 +1,45 @@
+Last Session : Why to Use ExecutorFramework in batches
+---------------------------------------------------------------------------------
+
+-> To implement parallel processing in batches we are using Multi Threading
+
+-> To implement Multi-Threading we are using Executors Framework.
+
+-> Executor Framework provided several methods to simplify Multi Threading Implementation in our programs
+
+---------------------------------------------------------------------------------
+
+-> When we ran our batch with 1 thread it took 10 mins time to process all 5000 pending triggers
+
+-> When we ran our batch with 15 threads it took 1.5 minutes time to process all 5000 pending triggers
+
+-> If i run that batch with 100 threads, how much time it will take to process all 5000 pending triggers ?
+---------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

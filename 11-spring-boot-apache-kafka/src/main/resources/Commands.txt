@@ -1,0 +1,43 @@
+Spring Boot + Apache Kafka Application
+=======================================
+
+Step-1 : Download Zookeeper from below URL
+
+   URL : http://mirrors.estointernet.in/apache/zookeeper/stable/
+
+Step-2 : Download Apache Kafka from below URL
+
+ URL : http://mirrors.estointernet.in/apache/kafka/2.1.1/kafka_2.11-          2.1.1.tgz
+
+Step-3 : Set Path to ZOOKEEPER in Environement variables
+
+Step-4 : Start Zookeeper server using below command from Kafka folder
+
+    Command : zookeeper-server-start.bat zookeeper.properties
+
+Step-5: Start Kafka Server using below command from Kakfa folder
+
+    Command : kafka-server-start.bat server.properties
+
+Step-6 : Create Kakfa Topic using below command
+
+Command : kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic customer
+
+Step-7 : View created Topics using below command
+
+      Command : kafka-topics.bat --list --zookeeper localhost:2181
+
+
+Step-8 : Create Spring Boot Project in IDE
+
+Step-9: Add below kafka related dependencies in pom.xml
+
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka-streams</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.kafka</groupId>
+			<artifactId>spring-kafka</artifactId>
+		</dependency>
+

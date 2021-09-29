@@ -1,0 +1,61 @@
+FriendsEntity.java ------Entity class
+
+@GeneratedValue
+private Integer id;
+private String name;
+private String email;
+private int phone_no;
+
+--------------------------------------------------------------------------------
+
+FriendsRepo.java ------Interface
+
+public FriendsRepo extends JpaRepository<CreateContactEntity, Serializable> 
+
+
+--------------------------------------------------------------------------------
+FriendsService.java  ------Service Class
+
+public boolean saveContact(contact){
+
+
+
+
+public List<friends> viewContact(){
+
+
+
+public void delete(Interger id){
+
+public contact editContact(Interger id)
+
+
+Steps to create first mini project:
+
+1. Create Spring boot starter project with below dependencies
+
+a) Starter-web
+b) starter data jpa
+c) H2
+d) project Lombok
+e) Tomcat Embed japer
+f) JSTL
+
+2. Configure below properties in the application.properties file
+
+a) Data source properties
+b) View resolver
+c) Embedded Server port number
+d) ORM properties
+
+3. Create Entity class and Repository Interface
+
+4. Create Service Interface and provide implementation
+
+5. Create a Controller with required methods
+
+6. Create View file(Jsp)
+
+7. Run Application and Test the functionalities
+
+

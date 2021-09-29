@@ -1,0 +1,143 @@
+Yesterday (30-Jun-2021) : Class Not Happend
+-------------------------------------------------------------------------
+In previous session (29-Jun-2021) : Service Interface Methods
+------------------------------------------------------------------------
+
+----------------------------pom.xml------------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.3.4.RELEASE</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.ashokit</groupId>
+	<artifactId>05-user-management-web-app</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>05-user-management-web-app</name>
+	<description>Demo project for Spring Boot</description>
+
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.6.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+------------------------------------------------------------------------
+server:
+  port: 9090
+spring:
+  datasource:
+    username: sa
+    password: null
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: javaproject.02.7am@gmail.com
+    password: 452
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+  
+-------------------------------------------------------------------------
+Insert Into COUNTRY_MASTER Values(1,'+91','India');
+Insert Into COUNTRY_MASTER Values(2,'+1','USA');
+Insert Into STATES_MASTER Values(1,1,'Andhra Pradesh');
+Insert Into STATES_MASTER Values(2,1,'Karnataka');
+Insert Into STATES_MASTER Values(3,2,'New Jersy');
+insert into STATES_MASTER values(4,2,'Ohio');
+Insert Into CITIES_MASTER Values(1,'Vizag',1);
+Insert Into CITIES_MASTER Values(2,'Guntur',1);
+Insert Into CITIES_MASTER Values(3,'Banglore',2);
+Insert Into CITIES_MASTER Values(4,'Mysore',2);
+Insert Into CITIES_MASTER Values(6,'Maywood',3);
+Insert Into CITIES_MASTER Values(7,'Westwood',3);
+Insert Into CITIES_MASTER Values(8,'Oakwood',4);
+Insert Into CITIES_MASTER Values(9,'Cuyahoga County',4);
+------------------------------------------------------------------------

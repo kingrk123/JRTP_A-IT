@@ -1,0 +1,29 @@
+Last session : What is Batch & Why We need Batches
+----------------------------------------------------------------------------------
+
+-> Batch is a program which is used to perform bulk operation.
+
+-> Batches are used to automate the process
+
+-> In Correspondence module we have batches to generate and send notices to citizens.
+
+-> Every batch will have a frequency
+
+-> Based on frequency we will schedule batch execution using scheduling tool.
+
+-> To schedule batches execution based on frequency we will have Batches Team for that.
+
+-> Opcon is one of the famous batch scheduling tool
+
+
+	Scheduling tool --> script file ---> batch program ----> database
+
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+

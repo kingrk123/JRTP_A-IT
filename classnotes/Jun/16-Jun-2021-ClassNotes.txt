@@ -1,0 +1,9 @@
+Last session : Implemented Pagination in 01-Mini Project
+-------------------------------------------------------------------------
+
+-> Pagination is the process of divinding the records into multiple pages.
+
+-> To implement pagination we are using JpaRepository provided 
+findAll(pageReq) method.
+-------------------------------------------------------------------------Today's session : Assignment checking (01-Mini Project)
+-------------------------------------------------------------------------

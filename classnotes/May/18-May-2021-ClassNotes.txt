@@ -1,0 +1,68 @@
+Last session : Purpose source code repository / Version Control Software
+-----------------------------------------------------------------------
+-> In one project mulitple developers will be available
+
+-> Developers will be working from different locations.
+
+-> If developers are working from multiple location we will face below problems
+
+		1) Code Integration
+		2) Monitoring code changes
+
+
+-> To resolve the above 2 problems we will use Version Control Softwares.
+
+		1) Clear Case
+		2) CVS
+		3) SVN
+		4) GIT Hub
+		5) Bit Bucket etc..
+
+-----------------------------------------------------------------------
+
+-> We have created Account in git hub and we have installed git client software.
+
+Note: When we create account in git hub it provides some space for free of cost to host our applications.
+
+-> Git Hub is a cloud platform which is used to store project code and for hosting applications.
+
+-> Git is the version control software.
+
+-> Git Hub cloud platform using Git as a version control software.
+-------------------------------------------------------------------------
+Note: Once we join in a project in IT company, they will provide git account credentials for us (We no need to create).
+-------------------------------------------------------------------------
+-> In Git account we will create repository to store project source code.
+
+	Note: For one project we will create one repository
+
+Note: In IT company, GIT admin will create repository for the project.
+
+-> In Git we can create 2 types of repositories.
+
+		1) Public Repository
+
+		2) Private Repository
+
+-> Public Repository means anybody can see and we will choose who can commit
+
+-> Private repository means we will choose who can see and commit to our repository.
+-------------------------------------------------------------------------
+
+-> Open Git bash to execute git commands
+
+
+Introduce ourself to git using config command
+----------------------------------------------
+	git config --global user.name "Ashok"
+	git config --global user.email "ashokitschool@gmail.com"
+
+
+
+
+
+
+
+
+
+

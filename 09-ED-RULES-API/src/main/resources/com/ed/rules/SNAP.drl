@@ -1,0 +1,29 @@
+package com.ed.rules;
+
+import com.usa.ri.gov.bindings.IndvInfo;
+import com.usa.ri.gov.bindings.PlanInfo;
+
+rule "Snap Plan Rules For AP"
+
+	when
+		indvInfo: IndvInfo(isEmployed=='N')
+	then
+		PlanInfo planInfo = new PlanInfo();
+		planInfo.setPlanName("SNAP");
+		planInfo.setPlanStatus("AP");
+		planInfo.setPlanStartDate("04-10-2020");
+		planInfo.setPlanEndDate("04-12-2020");
+		planInfo.setBenefitAmt("$300.00");
+		indvInfo.setPlanInfo(planInfo);
+	end
+
+rule "Snap Plan Rules For DN"
+	when
+		indvInfo: IndvInfo(isEmployed=='Y')
+	then
+		PlanInfo planInfo = new PlanInfo();
+		planInfo.setPlanName("SNAP");
+		planInfo.setPlanStatus("DN");
+		planInfo.setDenialReason("High Income");
+		indvInfo.setPlanInfo(planInfo);
+	end

@@ -1,0 +1,38 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    username: sa
+    password: null
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: javaproject.02.7am@gmail.com
+    password: abc
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+app:
+  messages:
+    welcomeMsg: Welcome To Ashok IT..!!
+    greetMsg: Good Morning...!!
+    invalidCredentials: Invalid Credentials
+    accLocked: Your Account Locked
+    userRegSuccs: Please check your email for unlocking your account
+    userRegFail: Failed To Register
+    unlockAccEmailSub: Registration Success | Ashok IT
+    unlockAccEmailBodyFile: UNLOCK-ACC-EMAIL-BODY-TEMPLATE.txt
+    recoverPwdEmailBodyFile: RECOVER-PASSWORD-EMAIL-BODY-TEMPLATE.txt
+    recoverPwdEmailSub: Forgot Password | Ashok IT

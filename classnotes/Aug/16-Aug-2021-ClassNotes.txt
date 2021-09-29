@@ -1,0 +1,73 @@
+Last session : Admin & AR Module details and Screens
+-------------------------------------------------------------------------
+-> Admin module deals with below 2 functionalities
+
+		1) Account Management
+		2) Plan Management
+
+-> AR module deals with Citizen registration in IES application
+
+-> AR module will interact with SSA_WEB application to verify citizen identity
+
+-> If citizen belongs to RI state, citizen application registration will be completed and Application Registration Number will be generated.
+
+-> If citizen is not belongs to RI state then application registration will fail and that citizen can't apply for plan in IES.
+
+----------------------------------------------------------------------------------
+Data Collection
+---------------------------------------------------------------------------------
+-> This module contains several screens which are used to collect citizen information to apply for a plan.
+
+-> Below are the screens that we can see in DC module
+
+			1) Create Case
+			2) Plan Selection
+			3) Education Details
+			4) Income Details
+			5) Property Details
+			6) Family Details
+			7) Relationship Details
+			8) Kids Details etc..
+
+-> In this DC module Case worker will collect citizen data.
+
+-> All DC screens will store citizen data into DB tables.
+----------------------------------------------------------------------------------
+Eligibility Determination
+----------------------------------------------------------------------------------
+-> Once Data Collection got completed, then ED flow will start
+
+-> ED module is responsible to determine weather citizen is eligible for the plan or not.
+
+-> Citizen eligibility will be determined based on eligibility rules.
+
+-> For every plan seperate eligibility rules will be available.
+
+-> Eligility Rules implemented in ED-RULES-API (rest api).
+
+-> When case worker click on 'Determine Eligibility' button then ED module will retrieve citizen data from DC tables and will interact with ED-RULES-API.
+
+-> ED-RULES-API will execute business rules with citizen data and it will determine weather citizen is eligible or not.
+
+
+
+
+
+
+
+
+
+
+
+				
+
+
+
+
+
+
+
+
+
+
+

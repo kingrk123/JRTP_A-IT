@@ -1,0 +1,31 @@
+Last session : Logging Implementation using Logback
+-----------------------------------------------------------------------
+-> Logback is the default option for logging in Spring Boot
+
+-> In realtime project we will configure FileAppender in 2 ways
+
+		1) TimeBasedRolling
+		2) SizeBasedRolling
+
+-----------------------------------------------------------------------
+Log Monitoring
+-----------------------------------------------------------------------
+-> The process of checking log messages is called as Log Monitoring
+
+-> We will use below softwares to perform log Monitoring
+
+		1) Putty
+		2) WinScp
+		3) Splunk
+
+
+
+
+
+
+
+
+
+
+
+

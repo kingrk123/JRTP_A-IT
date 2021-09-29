@@ -1,0 +1,634 @@
+Last session : Code Review Using Sonar Qube and Issues Fixed
+-------------------------------------------------------------------------
+Today's session : Stop Duplicate Contact Saving & Validations
+-------------------------------------------------------------------------
+
+---------------------------------pom.xml---------------------------------
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.5.0</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>in.ashokit</groupId>
+	<artifactId>01-Contact-App-15-JRTP</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>01-Contact-App-15-JRTP</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>1.8</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-validation</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.4.0.905</version>
+			</plugin>
+
+		</plugins>
+	</build>
+
+</project>
+------------------------application.properties---------------------------
+spring.datasource.driver-class-name=org.h2.Driver
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.username=sa
+spring.datasource.password=
+
+spring.jpa.show-sql=true
+
+server.port=9090
+
+spring.mvc.view.prefix=/views/
+spring.mvc.view.suffix=.jsp
+
+server.servlet.context-path=/App1
+-----------------------AppConstants.java-------------------------------
+package in.ashokit.constants;
+
+public class AppConstants {
+
+	public static final String CONTACT = "contact";
+
+	private AppConstants() {
+	}
+}
+----------------ContactInfoController.java------------------------------
+package in.ashokit.controller;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
+
+import org.springframework.data.domain.Page;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import in.ashokit.constants.AppConstants;
+import in.ashokit.entity.Contact;
+import in.ashokit.service.ContactService;
+
+@Controller
+public class ContactInfoController {
+
+	private ContactService contactService;
+
+	public ContactInfoController(ContactService contactService) {
+		this.contactService = contactService;
+	}
+
+	@GetMapping(value = { "/loadForm", "/" })
+	public String loadForm(Model model) {
+		Contact cobj = new Contact();
+
+		model.addAttribute(AppConstants.CONTACT, cobj);
+		return AppConstants.CONTACT;
+	}
+
+	@PostMapping("/saveContact")
+	public String handleSaveBtnClick(@Valid Contact contact, BindingResult result, Model model) {
+
+		if (result.hasErrors()) {
+			return AppConstants.CONTACT;
+		}
+
+		Boolean contactExists = contactService.isContactExists(contact);
+		if (contactExists) {
+			model.addAttribute("errMsg", "Duplicate Contact Found");
+		} else {
+			Boolean isSaved = contactService.saveContact(contact);
+			if (isSaved) {
+				model.addAttribute("succMsg", "Contact Saved Successfully");
+			} else {
+				model.addAttribute("errMsg", "Failed To Save Contact");
+			}
+		}
+		return AppConstants.CONTACT;
+	}
+
+	@GetMapping("/viewContacts")
+	public ModelAndView handleViewAllContactsClick(HttpServletRequest req) {
+
+		Integer pageSize = 3;
+
+		Integer pageNumber = 1;
+
+		String reqParam = req.getParameter("pno");
+		if (reqParam != null && !"".equals(reqParam)) {
+			pageNumber = Integer.parseInt(reqParam);
+		}
+
+		Page<Contact> page = contactService.getAllContactsNew(pageNumber - 1, pageSize);
+
+		int totalPages = page.getTotalPages();
+
+		List<Contact> allContacts = page.getContent();
+
+		ModelAndView mav = new ModelAndView();
+
+		// Setting data to model in Key-Value pair format
+		mav.addObject("contacts", allContacts);
+		mav.addObject("tp", totalPages);
+		mav.addObject("currPno", pageNumber);
+
+		// Setting Logical view name
+		mav.setViewName("viewContacts");
+
+		return mav;
+	}
+}
+-------------------------ViewContactsController.java--------------------
+package in.ashokit.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import in.ashokit.entity.Contact;
+import in.ashokit.service.ContactService;
+
+@Controller
+public class ViewContactsController {
+
+	@Autowired
+	private ContactService contactService;
+
+	@GetMapping("/editContact")
+	public ModelAndView handleEditLinkClick(@RequestParam("cid") Integer contactId) {
+		ModelAndView mav = new ModelAndView();
+
+		Contact cobj = contactService.getContactById(contactId);
+
+		mav.addObject("contact", cobj);
+		mav.setViewName("contact");
+		
+		return mav;
+	}
+
+	@GetMapping("/deleteContact")
+	public String handleDeleteLinkClick(@RequestParam("cid") Integer contactId) {
+		contactService.deleteContactById(contactId);
+		return "redirect:viewContacts";
+	}
+}
+
+------------------------ContactService.java-----------------------------
+package in.ashokit.service;
+
+import java.util.List;
+
+import org.springframework.data.domain.Page;
+
+import in.ashokit.entity.Contact;
+
+public interface ContactService {
+
+	public Boolean saveContact(Contact contact);
+
+	public List<Contact> getAllContacts();
+
+	public Page<Contact> getAllContactsNew(Integer pageNo, Integer pageSize);
+
+	public Contact getContactById(Integer contactId);
+
+	public Boolean deleteContactById(Integer contactId);
+	
+	public Boolean isContactExists(Contact contact);
+
+}
+-------------------------ContactServiceImpl.java-------------------------
+package in.ashokit.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
+
+import in.ashokit.entity.Contact;
+import in.ashokit.repository.ContactRepository;
+
+@Service
+public class ContactServiceImpl implements ContactService {
+
+	private ContactRepository contactRepo;
+
+	@Autowired
+	public ContactServiceImpl(ContactRepository contactRepo) {
+		this.contactRepo = contactRepo;
+	}
+
+	@Override
+	public Boolean saveContact(Contact contact) {
+		contact.setActiveSw("Y");
+		Contact savedEntity = contactRepo.save(contact);
+		if (savedEntity != null && savedEntity.getContactId() != null) {
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public List<Contact> getAllContacts() {
+		Contact contactFilter = new Contact();
+		contactFilter.setActiveSw("Y");
+
+		Example<Contact> example = Example.of(contactFilter);
+
+		return contactRepo.findAll(example);
+	}
+
+	@Override
+	public Page<Contact> getAllContactsNew(Integer pageNo, Integer pageSize) {
+		Contact contactFilter = new Contact();
+		contactFilter.setActiveSw("Y");
+
+		Example<Contact> example = Example.of(contactFilter);
+
+		PageRequest pageRequest = PageRequest.of(pageNo, pageSize);
+
+		return contactRepo.findAll(example, pageRequest);
+
+	}
+
+	@Override
+	public Contact getContactById(Integer contactId) {
+		Optional<Contact> findById = contactRepo.findById(contactId);
+		if (findById.isPresent()) {
+			return findById.get();
+		}
+		return null;
+	}
+
+	@Override
+	public Boolean deleteContactById(Integer contactId) {
+		Optional<Contact> findById = contactRepo.findById(contactId);
+		if (findById.isPresent()) {
+			Contact contact = findById.get();
+			contact.setActiveSw("N");
+			contactRepo.save(contact);
+			return true;
+		}
+
+		return false;
+	}
+
+	@Override
+	public Boolean isContactExists(Contact contact) {
+		Example<Contact> example = Example.of(contact);
+		return contactRepo.exists(example);
+	}
+}
+-----------------------Contact.java-------------------------------------
+package in.ashokit.entity;
+
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+@Entity
+@Table(name = "CONTACT_DTLS")
+public class Contact {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "CONTACT_ID")
+	private Integer contactId;
+
+	@Column(name = "CONTACT_NAME")
+	@NotEmpty(message = "Name Is Mandatory")
+	private String contactName;
+
+	@Column(name = "CONTACT_NUMBER")
+	@NotNull(message = "Number Is Mandatory")
+	private Long contactNumber;
+
+	@Column(name = "CONTACT_EMAIL")
+	@NotEmpty(message = "Email is mandatory")
+	@Email(message = "Please Enter Valid Email Id")
+	private String contactEmail;
+
+	@Column(name = "ACTIVE_SW")
+	private String activeSw;
+
+	@CreationTimestamp
+	@Column(name = "CREATED_DATE", updatable = false)
+	private LocalDate createdDate;
+
+	@UpdateTimestamp
+	@Column(name = "UPDATED_DATE", insertable = false)
+	private LocalDate updatedDate;
+
+	private String password;
+
+	private Long ssn;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public Long getSsn() {
+		return ssn;
+	}
+
+	public void setSsn(Long ssn) {
+		this.ssn = ssn;
+	}
+
+	public Integer getContactId() {
+		return contactId;
+	}
+
+	public void setContactId(Integer contactId) {
+		this.contactId = contactId;
+	}
+
+	public String getContactName() {
+		return contactName;
+	}
+
+	public void setContactName(String contactName) {
+		this.contactName = contactName;
+	}
+
+	public Long getContactNumber() {
+		return contactNumber;
+	}
+
+	public void setContactNumber(Long contactNumber) {
+		this.contactNumber = contactNumber;
+	}
+
+	public String getContactEmail() {
+		return contactEmail;
+	}
+
+	public void setContactEmail(String contactEmail) {
+		this.contactEmail = contactEmail;
+	}
+
+	public String getActiveSw() {
+		return activeSw;
+	}
+
+	public void setActiveSw(String activeSw) {
+		this.activeSw = activeSw;
+	}
+
+	public LocalDate getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDate createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public LocalDate getUpdatedDate() {
+		return updatedDate;
+	}
+
+	public void setUpdatedDate(LocalDate updatedDate) {
+		this.updatedDate = updatedDate;
+	}
+
+	@Override
+	public String toString() {
+		return "Contact [contactId=" + contactId + ", contactName=" + contactName + ", contactNumber=" + contactNumber
+				+ ", contactEmail=" + contactEmail + ", activeSw=" + activeSw + ", createdDate=" + createdDate
+				+ ", updatedDate=" + updatedDate + "]";
+	}
+
+}
+-------------------------ContactRepository.java-------------------------
+package in.ashokit.repository;
+
+import java.io.Serializable;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import in.ashokit.entity.Contact;
+
+@Repository
+public interface ContactRepository extends JpaRepository<Contact, Serializable> {
+
+}
+----------------------------contact.jsp--------------------------------
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h3>Save Contact Here</h3>
+
+	<p>
+		<font color='green'>${succMsg}</font>
+	</p>
+	<p>
+		<font color='red'>${errMsg}</font>
+	</p>
+	<form:form action="saveContact?contactId=${contact.contactId}" modelAttribute="contact" method="POST">
+		<table>
+			<tr>
+				<td>Contact Name</td>
+				<td><form:input path="contactName" /></td>
+				<td><form:errors path="contactName"/></td>
+			</tr>
+			<tr>
+				<td>Contact Email</td>
+				<td><form:input path="contactEmail" /></td>
+				<td><form:errors path="contactEmail"/></td>
+			</tr>
+			<tr>
+				<td>Contact Number</td>
+				<td><form:input path="contactNumber" /></td>
+				<td><form:errors path="contactNumber"/></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Save" /></td>
+			</tr>
+		</table>
+
+	</form:form>
+	
+	<a href="viewContacts">View All Contacts</a>
+	
+</body>
+</html>
+-------------------------------viewContacts.jsp--------------------------
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<script>
+	function confirmDelete() {
+		return confirm("Are you sure, you want to delete?");
+	}
+</script>
+
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h3>View Contacts</h3>
+
+	<a href="loadForm">+Add New Contact</a>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>S.No</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Number</th>
+				<th>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${contacts}" var="c" varStatus="count">
+				<tr>
+					<td>${count.index+1}</td>
+					<td>${c.contactName}</td>
+					<td>${c.contactEmail}</td>
+					<td>${c.contactNumber}</td>
+					<td><a href="editContact?cid=${c.contactId}">Edit</a> &nbsp; <a
+						href="deleteContact?cid=${c.contactId}"
+						onclick="return confirmDelete()">Delete</a></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+
+	<c:if test="${currPno > 1 }">
+		<a href="viewContacts?pno=${currPno-1}">Previous</a>
+	</c:if>
+	<c:forEach begin="1" end="${tp}" var="pageNo">
+		<c:choose>
+			<c:when test="${currPno==pageNo}">
+					${pageNo}
+			</c:when>
+			<c:otherwise>
+				<a href="viewContacts?pno=${pageNo}">${pageNo}</a>
+			</c:otherwise>
+		</c:choose>
+
+	</c:forEach>
+	<c:if test="${currPno < tp }">
+		<a href="viewContacts?pno=${currPno + 1}">Next</a>
+	</c:if>
+</body>
+</html>
+-------------------------------------------------------------------------
+

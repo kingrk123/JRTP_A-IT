@@ -1,0 +1,87 @@
+Last Session (03-Aug-2021) : Excel & PDF files creation
+------------------------------------------------------------------------
+04-Aug-2021: No class
+------------------------------------------------------------------------
+Today's session (05-Aug-2021): Major Project
+-------------------------------------------------------------------------
+Part-1: Industry Details
+Part-2: Realtime Tools
+Part-3: 03-Mini Project
+
+-> 08-Aug-2021 we have Junit-5 continution workshop for REST api unit testing + code coverage using Jacoco
+
+-> REST API Performance Testing using JMETER
+
+-> Front and Backend Applications Integration
+
+-> Application Deployment Using Jenkins
+
+-> Docker Image creation
+----------------------------------------------------------------------------------
+Major Project
+----------------------------------------------------------------------------------
+Name : IES (Integrated Eligibility System)
+
+Client : US State Govt (Rhode Island)
+
+Domain : Health & Insurance 
+
+----------------------------------------------------------------------------------
+-> INDIA 
+	- Central Govt (Prime Minister --> Modi)
+	- State Govts (Chief Minister, Governer)
+---------------------------------------------------------------------------------
+-> USA
+	- Federal Govt
+	- State Govts
+----------------------------------------------------------------------------------
+
+1) If you are having low or no income, US govt will provide Food Benefits
+
+2) If you are having low & limited resource, US govt will take care of your childs
+
+3) US govt will provide free Medical insurance (Free Hospitality)
+
+4) For Unemployees, US govt will provide free trainings, monthly expenses during training, job opportunities 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

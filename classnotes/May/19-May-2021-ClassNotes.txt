@@ -1,0 +1,53 @@
+Last session : Git Repo Creation & Types of Repositories
+-------------------------------------------------------------------------
+-> Git hub is supporting for two types of repositories
+
+		1) public repo
+		2) private repo
+
+-> Once Git Repository got created it will generate one unique url for that repo
+
+	https://github.com/Ashok-IT-School/15JRTP-01-App.git
+
+-------------------------------------------------------------------------
+Git Bash commands
+-------------------------------------------------------------------------
+git help
+
+git help <command-name>
+
+git config --global user.name "Ashok"
+
+git config --global user.email "ashokitschool@gmail.com"
+-------------------------------------------------------------------------
+git init : To initialize our folder as git operations folder
+
+git add <filename> : To add one file to git staging area
+
+Note: The files which are added to staging area are eligible for commit.
+
+git status: To see files added and not added to staging area
+
+git commit -m <msg> : To commit files from staging area to git local repo
+
+git push : To move changes from local repo to central repository.
+
+git pull : To take changes from git central repo to local repo
+
+
+
+
+
+
+
+------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+

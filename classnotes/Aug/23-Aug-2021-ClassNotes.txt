@@ -1,0 +1,43 @@
+Last Session : Batch Execution
+-------------------------------------------------------------------------
+-> CO module contains batches to perform bulk operation
+
+-> CO Batches are used to generate and send notices to citizens
+
+-> CO batch processing will be like below
+
+	-> Read Pending Triggers from DB
+	-> Process Each trigger
+		 - Get Citizen Address dtls
+	 	 - Get citizen eligibility dtls
+		 - Get citizen benefit details
+		 - Invoke HpExtreme webservice
+		 - Store notice in EDM using Webservice
+		 - Send Notice to printer using Webservice
+		 - Update Trigger as Completed
+---------------------------------------------------------------------------------
+
+-> When we ran our batch with single thread it is taking 1 sec to process 1 trigger
+
+		1 trigger -> 1 sec to process
+
+		1 minute --> 1*60 ==> 60 triggers
+
+		1 hour --> 60 * 60 ==> 3600 triggers
+
+		2 hours --> 3600 * 2 ===> 7200 triggers 
+
+-> As this batch is processing only 7200 triggers for 2 hours this capacity is not sufficient for production.
+--------------------------------------------------------------------------------	
+How to increase this batch capacity?
+---------------------------------------------------------------------------------
+-> To improve our batch program capacity we need to use Parallel Processing.
+
+-> To implement parallel processing we can use Multithreading.
+
+-> If we implement multi-threading then mulitple threads will process the triggers parallelly.
+--------------------------------------------------------------------------------
+
+
+
+

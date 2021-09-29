@@ -1,0 +1,36 @@
+Last session : Code Review Using Sonar Qube
+--------------------------------------------------------------------------> 
+To perform code review for project we have to do below 2 things
+
+	1) Download and Run Sonar Server
+
+	2) Add Sonar-Maven-Plugin in pom.xml and run (goal -> sonar:sonar)
+
+-> When we perform code review using sonar qube it will generate report with below details
+
+1) Bugs
+
+2) Vulnerabilities
+
+3) Code Smells
+
+4) Code Coverage
+
+5) Duplicate Code
+
+-> Bugs means the problems available in source code (we have to fix them)
+
+-> Vulnerabilities are security issues (hackers can attack)
+
+-> Code smells are the issues which are recommended to fix
+
+-> Code Coverage related to Unit testing
+
+-> Duplicate code means the repeated code which is available in project.
+----------------------------------------------------------------------------------
+-> In project if we want to declare variables like password and ssn we should not declare them directley.
+
+-> Instead of declaring password we will declare it as pazzword
+
+-> Instead of declaring ssn we will declare it as zzn
+----------------------------------------------------------------------------------

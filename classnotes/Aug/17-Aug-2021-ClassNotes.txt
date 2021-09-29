@@ -1,0 +1,70 @@
+Last session : DC Screens & ED Module Details
+----------------------------------------------------------------------------------
+-> Data Collection Module contains screens to collect citizen data 
+
+-> DC screens will store citizen data into Database tables
+
+-> ED module is used to determine Citizen Eligibility for the plan
+
+-> ED Module will communicate with ED-RULES-API to execute business rules
+
+-> Business Rules will decide weather citizen is eligible for the plan or not
+
+-> For every plan we will have seperate business rules.
+----------------------------------------------------------------------------------
+Rule Engines
+----------------------------------------------------------------------------------
+-> Rule Engines are used to implement Decision Making Systems
+
+-> Below are the examples for decision making systems
+
+		1) Loan Application Approval / Denial
+
+		2) Insurance Plan Approval / Denial
+
+		3) Discounts on purchases
+
+		4) Offers on purchases etc..
+
+----------------------------------------------------------------------------------
+-> As part of decision making we need to check several conditions
+
+-> To check conditions programatically we will use below things
+
+		i) if-else if
+		ii) switch cases
+
+-> If we have requirement to check 3-4 conditions then if-else is recommended
+
+-> If we have 10 - 20 conditions then switch cases are recommended
+
+-> If we have more than 20 conditions then Rule Engines are recommended.
+
+----------------------------------------------------------------------------------
+
+-> There are several Rule Engines available in market.
+
+	i) JBOSS DROOLS
+	ii) Rule Book
+	iii) OpenL Table
+	iv) OPA Oracle Policy Engine (Commercial) etc...
+
+----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

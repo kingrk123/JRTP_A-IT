@@ -1,0 +1,97 @@
+Last session : 02-Mini Project Requirements & DB Design
+-------------------------------------------------------------------------
+Today's session: Project Setup
+-------------------------------------------------------------------------
+1) Create Spring Boot application with below dependencies
+
+		a) web starter
+		b) data jpa starter
+		c) oracle / mysql / h2 dependency (any one)
+		d) mail starter
+		e) project lombok
+		f) swagger & swagger-ui
+		g) actuator starter
+		h) devtools
+
+2) Configure below properties in application.yml file
+
+		a) server port
+		b) data source properties
+		c) ORM properties
+		d) SMTP properties
+		e) actuator properties
+
+3) Create packages required in application
+
+		in.ashokit (basepackage)
+		in.ashokit.constants
+		in.ashokit.controller
+		in.ashokit.service
+		in.ashokit.entity
+		in.ashokit.repository
+		in.ashokit.util
+		in.ashokit.properties
+		in.ashokit.config
+
+4) Create Entity Classes For DB tables (4 entity classes required)
+
+		Country.java
+		State.java
+		City.java
+		User.java
+
+5) Create Repository interfaces (4 repositories required)
+
+		CountryRepo.java
+		StateRepo.java
+		CityRepo.java
+		UserRepo.java
+
+6) Create Form Binding Classes
+
+		LoginForm.java
+		RegForm.java
+		UnlockAccForm.java
+
+7) Create Service Interface & Impl class
+
+		UserService.java (I)
+		UserServiceImpl.java (C)
+
+8) Create RestControllers
+
+		LoginRestController.java
+		RegRestController.java
+		UnlockAccRestController.java
+		ForgotPwdRestController.java
+
+9) Create Constant class
+
+		AppConstants.java
+
+10) Create Properties class
+
+		AppProps.java
+
+11) Create Utility classes
+
+		EmailUtils.java
+		PwdUtils.java
+
+12) Create Swagger Config class
+
+		SwaggerConfig.java
+
+13) Insert data into static tables (country_master, state_master & city_master)
+-------------------------------------------------------------------------Today's assignment : Project setup based on above steps (13 steps should be completed)
+
+Tomorrow's assignment: Identify methods, method parameters and return types in Service & Controllers.
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+

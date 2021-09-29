@@ -1,0 +1,49 @@
+Yesterday's session : Maven Project Folder Structure
+------------------------------------------------------------------------
+
+-> Maven project contains pom.xml file which acts as maven configuration file
+
+-> All the dependencies which are required for our application we will add in pom.xml file only
+
+Note: We can identify maven dependencies in mvnrepository.com website
+
+---------------------------------Adding maven dependency----------------
+<dependencies>
+   <dependency>
+	<groupId>org.springframework</groupId>
+        <artifactId>spring-core</artifactId>
+        <version>5.3.6</version>
+   </dependency>
+</dependencies>
+------------------------------------------------------------------------
+-> We can add multiple dependencies under <dependencies/> tag in pom.xml file
+-------------------------------------------------------------------------
+
+-> To perform application build process maven provided several goals for us
+
+	1) clean
+
+	2) compile
+
+	3) test
+
+	4) package
+
+	5) install etc.
+
+
+-> 'clean' goal is used to delete target folder
+
+-> 'compile' goal is used to compile java classes and generate .class files in target folder
+
+-> 'test' goal is used to execute junit classes available in application for unit testing
+
+-> 'package' goal is used to generate 'jar' or 'war' file for our application
+
+-> 'install' goal is used to represent our project as dependency for other projects
+
+
+
+
+
+

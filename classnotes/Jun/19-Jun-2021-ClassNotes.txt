@@ -1,0 +1,61 @@
+Last session : Code Review Introduction
+-------------------------------------------------------------------------
+Today's session : Code Review Using Sonar Qube
+-------------------------------------------------------------------------
+-> Sonar Qube is an open source software which is used to perform Code Review
+
+-> Sonar Qube supports for 27 programming languages
+
+-> Sonar Qube provided 'Community Edition' to use it for free of cost
+
+Note: We have commericial plans also for using Sonar Qube
+-------------------------------------------------------------------------
+
+Running Project with SonarQube Server
+-------------------------------------
+Add below 1 plugin in project pom.xml file (in <build> tag)
+
+<plugin>
+   <groupId>org.sonarsource.scanner.maven</groupId>
+   <artifactId>sonar-maven-plugin</artifactId>
+   <version>3.4.0.905</version>
+</plugin>
+
+-> Do Maven build of project with install goal
+	
+	mvn clean compile package install
+
+-> For project do maven build with below goal To Do Code Review
+	
+	mvn sonar:sonar
+
+-> After maven build completed, check sonar server dashboard.
+	
+-> We can our project report under Projects
+
+-> Report contains below details
+	
+		1) Bugs(Blocker, Critical, Major & Minor)
+		2) Vunerabilities
+		3) Code Smells
+		4) Code Coverage
+		5) Duplicates etc...
+
+-> Bugs means the problems available in source code like ArthematicException, NullPointerException, Resource Leak etc (We have to fix them)
+
+-> Vunerabilities nothing but security issues (If we don't fix these hackers can attack). We have to fix them
+
+-> Code Smells are minor issues available in code. Recommneded to fix
+    (private methods which are not called, un-used imports, un-used method parameters etc)
+
+-> Code Coverage represents how much code we have covered in Unit Testing.
+
+-> Duplicates represents in how many places we have written same logic in project.
+
+
+
+
+
+
+
+

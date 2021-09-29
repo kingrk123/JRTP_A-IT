@@ -1,0 +1,114 @@
+Today's session : Performance Testing Using JMETER
+-------------------------------------------------------------------------
+
+-> Performance testing is the process of identifying stability and responsiveness of the application.
+
+-> When we are delievering the project to the client we should provide project statistics
+
+		-> How many users can access at a time
+		-> What is the avg response time
+		-> What is the max load application can handle
+
+-> By using Performance Testing we will get the above statistics
+
+-> To do performance testing we have several softwares
+		
+		1) JMETER (Open Source)
+		2) Load Runner (Commercial)
+
+-> By using these tools we will create virtual users and will keep load on the application.
+-------------------------------------------------------------------------------------------
+The Apache JMeter™ application is open source software, a 100% pure Java application designed to load test functional behavior and measure performance. 
+
+It was originally designed for testing Web Applications but has since expanded to other test functions.
+
+Apache JMeter features include:
+-------------------------------------------------------------------------------------------
+Ability to load and performance test many different applications/server/protocol types:
+
+-> Web - HTTP, HTTPS (Java, NodeJS, PHP, ASP.NET, …)
+-> SOAP / REST Webservices
+-> FTP
+-> Database via JDBC
+-> LDAP
+-> Message-oriented middleware (MOM) via JMS
+-> Mail - SMTP(S), POP3(S) and IMAP(S)
+-> Native commands or shell scripts
+-> TCP
+-> Java Objects
+
+
+URL to download Apache JMETER : https://jmeter.apache.org/download_jmeter.cgi
+
+---------------------------------------------------------------------------------------------
+Procedure create Test Plan in JMETER
+---------------------------------------------------------------------------------------------
+-> Create REST API and start it (We will do performance testing on this REST API)
+
+-> Open JMETER software using jmeter.bat file available in JMETER bin folder
+
+-> Right Click on Test Plan and add Thread Group (Enter No.of Threads to run)
+
+	(Test Plan -> Add -> Threads -> Thread Group)
+
+		1 Thread = 1 User
+
+-> Right click on Thread Group --> Add HTTP Request and enter request details
+
+	(Thread Group -> Add -> Sampler -> Http Request)
+
+		Http Protocoal
+		Server IP
+		Server PORT
+		HTTP Method
+		Resource URLPattern
+
+
+-> Add listeners to monitor the response
+
+	(Thread Group -> Add -> Listener -> View Results Tree & Summary Report)
+	
+-> Save Test Plan with .jmx extension
+
+	(Right Click on Test Plan and Save it)
+
+---------------------------------------------------------------------------------------------
+-> Once Test plan is saved, we can execute it using cli mode
+
+-> Go to jmeter bin folder, open command promot from there and execute below command
+
+	> jmeter -n -t <test-plan>.jmx -l <results-file>.jtl
+
+-> GO to JMETER Summary Report page and import jtl file to see results
+----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

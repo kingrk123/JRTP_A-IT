@@ -1,0 +1,47 @@
+Last session : Password Encryption & Decryption Implementation In Project
+-------------------------------------------------------------------------
+Today's session : Exception Handling In REST API
+-------------------------------------------------------------------------
+
+-> We can handle exceptions in 2 ways
+
+		1) Global Exception Handling Mechanism
+		2) Controller Based Exception Handling Mechanism
+
+-> Global Exception Handling means it will be applicable for entire application.
+
+-> Controller Based Exception Handling means it will handle the exceptions occured in that particular controller.
+-------------------------------------------------------------------------
+-> When we are doing any experiment or when we are implementing any functionality for first time don't directley implement in project.
+
+-> First develop a POC (Proof Of Concept) and show that POC to higher management (Lead / Manager).
+
+-> Once your POC got approved by Lead or Manager then you can implement that in project.
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

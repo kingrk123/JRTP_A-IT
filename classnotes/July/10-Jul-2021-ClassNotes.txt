@@ -1,0 +1,27 @@
+Last session : Doubts clarifications
+------------------------------------------------------------------------
+-> Most of the people are doing mistakes in application.yml configuration
+
+-> Some people done mistakes in readingMailBody( ) method.
+
+-> Some People done mistakes in Entity classes & Repositories interfaces
+-------------------------------------------------------------------------
+Login Functionality
+-------------------------------------------------------------------------
+
+
+
+
+---------------------------Forgot pwd body template file--------------
+Hi  {FNAME}, {LNAME} :
+<br/>
+<br/>
+
+Welcome to Ashok IT, Please find your password below<br/>
+<br/>
+
+Password : {PWD}<br/>
+<br/>
+
+Thanks & Regards,<br/>
+Ashok IT.<br/>

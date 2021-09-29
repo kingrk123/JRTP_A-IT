@@ -1,0 +1,364 @@
+Yesterday's session : Batch Processing in IES
+Today's session : Batch Implementation To Generate Notices
+------------------------------------------------------------------------
+@Data
+@Entity
+@Table(name = "CO_TRIGGERS")
+public class CoTriggersEntity {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "TRG_ID")
+	private Integer triggerId;
+
+	@Column(name = "CASE_NUM")
+	private Long caseNum;
+
+	@Column(name = "TRG_STATUS")
+	private String triggerStatus;
+
+	@CreationTimestamp
+	@Column(name = "CREATE_DT")
+	private Date createdDate;
+
+	@Column(name = "UPDATE_DT")
+	private Date updatedDate;
+
+}
+-----------------------------------------------------------------------------------------------------------
+package in.ashokit.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "ELIGIBILITY_DETAILS")
+public class EligibilityDetailEntity {
+
+	@Id
+	@GeneratedValue
+	@Column(name = "ED_TRACE_ID")
+	private Integer edTraceId;
+
+	@Column(name = "CASE_NUM")
+	private Long caseNum;
+
+	@Column(name = "PLAN_NAME")
+	private String planName;
+
+	@Column(name = "PLAN_STATUS")
+	private String planStatus;
+
+	@Column(name = "PLAN_START_DT")
+	private String planStartDate;
+
+	@Column(name = "PLAN_END_DT")
+	private String planEndDate;
+
+	@Column(name = "BENEFIT_AMT")
+	private String benefitAmt;
+
+	@Column(name = "DENIAL_REASON")
+	private String denialReason;
+
+	@Column(name = "CREATE_DT")
+	private Date createdDate;
+
+	@Column(name = "UPDATE_DT")
+	private Date updatedDate;
+
+}
+-----------------------------------------------------------------------------------------------------------
+/**
+ * 
+ */
+package in.ashokit.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Lob;
+import javax.persistence.Table;
+
+import lombok.Data;
+import lombok.RequiredArgsConstructor;
+
+/**
+ * @author vinay
+ *
+ */
+
+@Data
+@RequiredArgsConstructor
+@Entity
+@Table(name = "CO_PDFS")
+public class CoPdfEntity {
+	@Id()
+	@GeneratedValue
+	@Column(name = "CO_PDF_ID")
+	Integer coPdfId;
+
+	@Column(name = "CASE_NUMBER")
+	String caseNumber;
+
+	@Lob
+	@Column(name = "PDF_DOCUMENT", length = 100000)
+	byte[] pdfDocument;
+
+	@Column(name = "PLAN_NAME")
+	String planName;
+
+	@Column(name = "PLAN_STATUS")
+	String PlanStatus;
+
+}// CoPdfEntity
+------------------------------------------------------------------------------------------------------------
+package in.ashokit.main;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.stereotype.Component;
+
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Element;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfPCell;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
+
+import in.ashokit.model.CoPdfModel;
+import in.ashokit.model.CoTriggersModel;
+import in.ashokit.model.EligibilityDetailModel;
+import in.ashokit.service.CoBatchService;
+import in.ashokit.service.EligibilityDetailService;
+
+@Component
+public class CoGenDlyBatch {
+
+	@Autowired
+	private CoBatchService coBatchService;
+
+	@Autowired
+	private EligibilityDetailService edService;
+
+	public void start() {
+		// read all pending triggers from triggers table
+		List<CoTriggersModel> pendingTriggers = coBatchService.findPendingTriggers();
+
+		pendingTriggers.forEach(trigger -> {
+			process(trigger);
+		});
+
+	}
+
+	public void process(CoTriggersModel trigger) {
+		// based on case number read eligibility data
+
+		EligibilityDetailModel edDtls = edService.findByCaseNum(trigger.getCaseNum());
+
+		// based on eligibility data generate pdf
+		String planStatus = edDtls.getPlanStatus();
+
+		if ("AP".equals(planStatus)) {
+			buildPlanApPdf(edDtls);
+		} else {
+			buildPlanDnPdf(edDtls);
+		}
+
+		// store pdf into co_pdfs table
+		storePdf(edDtls);
+
+		// update trigger as completed
+		coBatchService.updatePendingTrigger(trigger);
+	}
+
+	public void buildPlanApPdf(EligibilityDetailModel edModel) {
+		try {
+			Document document = new Document();
+			FileOutputStream fos = new FileOutputStream("D:\\CO-PDFS\\" + edModel.getCaseNum().toString() + ".pdf");
+			PdfWriter.getInstance(document, fos);
+
+			// open document
+			document.open();
+
+			// Creating paragraph
+			Paragraph p = new Paragraph();
+			p.add("Approved Plan Details");
+			p.setAlignment(Element.ALIGN_CENTER);
+
+			// adding paragraph to document
+			document.add(p);
+
+			// Create Table object, Here 2 specify the no. of columns
+			PdfPTable pdfPTable = new PdfPTable(2);
+
+			// First row in table
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Case Number")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getCaseNum().toString())));
+
+			// Second Row
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Plan Name")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getPlanName())));
+
+			// Third Row
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Plan Status")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getPlanStatus())));
+
+			// Fourth Row
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Plan Start Date")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getPlanStartDate())));
+
+			// Fifth Row
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Plan End Date")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getPlanEndDate())));
+
+			// sixth Row
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Benfit Amount")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getBenefitAmt())));
+
+			// Add content to the document using Table objects.
+			document.add(pdfPTable);
+			document.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+	public void buildPlanDnPdf(EligibilityDetailModel edModel) {
+
+		try {
+			Document document = new Document();
+			FileOutputStream fos = new FileOutputStream("D:\\CO-PDFS\\" + edModel.getCaseNum().toString() + ".pdf");
+			PdfWriter.getInstance(document, fos);
+
+			// open document
+			document.open();
+
+			// Creating paragraph
+			Paragraph p = new Paragraph();
+			p.add("Denied Plan Details");
+			p.setAlignment(Element.ALIGN_CENTER);
+
+			// adding paragraph to document
+			document.add(p);
+
+			// Create Table object, Here 2 specify the no. of columns
+			PdfPTable pdfPTable = new PdfPTable(2);
+
+			// First row in table
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Case Number")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getCaseNum().toString())));
+
+			// Second row in table
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Plan Name")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getPlanName().toString())));
+
+			// Third Row
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Plan Status")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getPlanStatus())));
+
+			// Fourth Row
+			pdfPTable.addCell(new PdfPCell(new Paragraph("Denial Reason")));
+			pdfPTable.addCell(new PdfPCell(new Paragraph(edModel.getDenialReason())));
+
+			// Add content to the document using Table objects.
+
+			document.add(pdfPTable);
+			document.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	private String storePdf(EligibilityDetailModel model) {
+		CoPdfModel pdfModel = null;
+		byte[] casePdf = null;
+		FileSystemResource pdfFile = null;
+		pdfModel = new CoPdfModel();
+		try {
+			pdfFile = new FileSystemResource("D:\\CO-PDFS\\" + model.getCaseNum().toString() + ".pdf");
+			casePdf = new byte[(int) pdfFile.contentLength()];
+			pdfFile.getInputStream().read(casePdf);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		pdfModel.setCaseNumber(model.getCaseNum());
+		pdfModel.setPlanName(model.getPlanName());
+		pdfModel.setPlanStatus(model.getPlanStatus());
+		pdfModel.setPdfDocument(casePdf);
+		// call service class method
+		coBatchService.savePdf(pdfModel);
+		return model.getCaseNum().toString();
+	}
+}
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+-> Batch is taking 1 sec to process 1 trigger
+
+		1 sec =  1 trigger
+
+		1 min = 60 triggers
+
+		1 hour = 60 * 60 = 3600 triggers
+
+		2 hours = 2 * 3600 = 7200 triggers
+--------------------------------------------------------------------------------------------
+
+-> 1 st day 1500 ppl applied for plans (1500 notices should be generated) - COMPLETED
+
+-> 2nd day 3500 ppl applied for plans (3500 notices should be generated) - COMPLETED
+
+-> 3rd day 10,000 ppl applied for plan (10k notices should be generated) - 2800 pending
+
+-> 4th day 25000 ppl applied for plan (25k notices should be generated) - 20,600 pending
+
+-> 5th day 50k ppl applied for plan (50k notices should generated) - 63,400 pending
+
+---------------------------------------------------------------------------------------------
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

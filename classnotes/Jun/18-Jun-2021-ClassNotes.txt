@@ -1,0 +1,55 @@
+Last session (16-Jun-21) : 01-Mini Project Implementation
+-------------------------------------------------------------------------
+17-Jun-21: No class
+-------------------------------------------------------------------------
+Today's session : Code Review
+-------------------------------------------------------------------------
+-> The process of verifying source code is called as Code Review
+
+-> Code Review is used to identify mistakes we have done in the code
+
+-> Code Review will be performed in 2 ways
+
+		1) By Using Tool
+		2) Peer Review
+
+-> When we do the code review by using tool, it will check coding standards, duplicate code, NullPointerExceptions etc...
+
+-> Peer means reviewing code manullay (In this process we will identify mistakes in logic).
+
+-> The main intention to perform code review is to provide bug-free and quality code.
+-------------------------------------------------------------------------
+-> In Realtime we will use SonarQube software to perform Code Review
+-------------------------------------------------------------------------
+What is Sonar Qube?
+-------------------------------------------------------------------------
+-> SonarQube is an open source software
+
+-> SonarQube is used to perform code review
+
+-> SonarQube supports 27 programming languages
+-------------------------------------------------------------------------
+-> We can use Sonar Qube Community Edition for free of cost.
+
+-> Download SonarQube 6.3.1 version from below URL
+
+		https://www.sonarqube.org/downloads/
+-------------------------------------------------------------------------
+-> Download sonar software zip file and extract it
+
+-> Go to sonar folder sonar/bin/windows64/StartSonar.bat
+
+Note: Based your PC os choose folder to start sonar
+
+-> Once sonar server is started it will display 'Sonar is up' message in command promot.
+
+-> Once Sonar is Up and Running then access Sonar Dashboard using below URL
+
+		http://localhost:9000/
+
+
+
+
+
+
+

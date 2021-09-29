@@ -1,0 +1,66 @@
+Last session : Edit and Delete functionalities in 01-Mini project
+---------------------------------------------------------------------------------
+1) Save Contact
+
+2) View Contacts
+
+3) Edit Contact
+
+4) Delete Contact
+
+-> We have completed coding part for above requirements
+---------------------------------------------------------------------------------
+Today's session : soft delete functionality
+----------------------------------------------------------------------------------
+
+-> In application we can implement 'Delete' functionality in 2 ways
+
+		1) Hard Delete
+		2) Soft Delete
+-------------------------------------------------------------------------
+-> The process of deleting the record(s) permanently from the DB is called as Hard Delete.
+
+-> To perform Hard Delete we will execute 'delete' query directley.
+
+	Ex: DELETE FROM CONTACT_DTLS WHERE CONTACT_ID = 101;
+
+Note: Once we delete record from DB using DELETE query then we can't get that record back.
+------------------------------------------------------------------------
+-> The process of deleting the record(s) from the application but not from the DB is called Soft Delete.
+
+-> To perform Soft Delete operation we will maintain additional column in DB.
+
+		Ex: ACTIVE_SW
+			Y = Not Deleted
+			N = DELETED
+
+-> To perform Soft delete we will execute Update Query instead of Delete query.
+
+-> If we do soft delete, we can get the data back from DB bcz data will be there in DB.
+----------------------------------------------------------------------------------
+Pagination
+----------------------------------------------------------------------------------
+-> The process of dividing all records and displaying in multiple pages is called as pagination.
+
+		Ex: Gmail, Google Search Results...
+
+-> To implement pagination we have to decide page size.
+
+	Ex: Page Size :10  (For each page 10 records should be displayed)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

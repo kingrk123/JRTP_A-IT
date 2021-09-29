@@ -1,0 +1,47 @@
+Last session : Git Bash Commands
+------------------------------------------------------------------------
+git help
+
+git help <command-name>
+
+git config --global user.name "ashok"
+git config --global user.email "ashokitschool@gmail.com"
+
+git init
+
+git status
+
+git add <filename>
+
+git commit -m 'msg'
+
+git remote add origin <repo-url>
+
+git push
+---------------------------------------------------------------------------------------------
+git clone <repo-url> : To take existing project from git central repo to local system
+
+
+Staged : The files which are added for commit (will display in green color)
+
+Un-staged : The files which are already available in git repo but modified in local (Will display in red color)
+
+Un-Tracked : The files which are newly created in local (Will diplay in red color)
+
+-> In order to commit un-staged and un-tracked files we have to add those files to staging using git add command.
+
+-> In order to display staged, un-staged and un-tracked files we will use 'git status' command.
+
+
+
+
+
+
+
+
+
+
+
+
+
+

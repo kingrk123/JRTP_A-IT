@@ -1,0 +1,50 @@
+In last few days we discussed about below concepts
+------------------------------------------------------------------------
+
+1) Apache kafka
+-----------------
+-> It is a distributed streaming platform which is used to exchange messages from one application to another application. It is mainley used to process stream of data.
+
+2) Redis Cache
+---------------
+-> When we want to use static data in one application then we will go for cache implementation.
+
+-> If we want to use same static data in multiple applications/apis then we will go for distributed cache.
+
+-> Redis Cache we can use to implement distributed cache. It is an open source software.
+
+3) Spring Security
+------------------
+-> Spring Security is used to secure our applications.
+-> By using Spring Security we will implement Authentication and Authorization.
+-> In Memory Authentication
+-> JDBC Authentication
+-> UserDetailsService Authentication
+
+4) JWT
+----------
+-> JWT stands for JSON Web Token
+
+-> JWT is used to implement token based security
+
+5) Config Server
+----------------
+-> Config Server is used to seperate application and application properties.
+
+-> To externalize config props we will use this Config Server concept.
+
+6) Docker
+----------
+-> It is used to simplify application deployment process in multiple environments.
+
+-> Docker is a containerization platform.
+
+
+
+
+
+
+
+
+
+

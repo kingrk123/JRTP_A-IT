@@ -1,0 +1,117 @@
+Course name : Java Real-Time Project (Fullstack Development)
+	      (Spring Boot, Microservices & Angular - 11)
+
+Start Date : 22-Apr-2021
+
+Class Timings: 10:00 AM IST - 11:30 AM IST (1.5 hour) (Mon-Sat)
+
+Duration : 3 months (10 days +/-)
+
+Trainer : Mr. Ashok (8+ yrs experience, Working Professional)
+	  	    (5+ Years of experience in Training)
+
+YouTube Channel : www.youtube.com/c/AshokIT
+Facebook Group : www.facebook.com/groups/ashokitschool
+----------------------------------------------------------------------------------
+
+Pre-Requisites:
+---------------
+Core Java
+Adv Java (JDBC, Servlets & JSP)
+SQL
+ORM Framework (Good To have)
+
+Spring Boot & Microservices (You can do this course parallely - @7:30 AM IST)
+Angular - 11 with Typescript (You can do parallely - @11:30 AM IST - FREE FOR ALL)
+
+Course Content:
+---------------
+Part-1 : Software Industry Terminology
+----------------------------------------	
+	  1) How many type of software companies
+	  2) Interview Process In Software Companies
+	  3) What is Software Project
+	  4) How many types of software projects & work culture
+	  5) How many types of teams & Roles of teams
+	  6) Role Chart In Software Company
+	  7) Bridge Calls & VC
+	  8) Conclusion
+
+Part-2 : Java Real-Time Tools (30+ Realtime Tools)
+----------------------------------------------------
+	  1) Maven
+	  2) Gradle
+          3) SVN (Videos available in our Youtube)
+          4) GIT HUB
+          5) BitBucket
+          6) Source Tree
+	  7) Log4J, LogBack & SLF4J
+	  8) Log Monitoring Tools (Putty, WinScp & Splunk)
+          9) JUnit (For Unit Testing)
+          10) Mocking (Easy Mock, PowerMock, Mockito)
+          12) Code Coverage (Jacocco)
+          13) Sonar Qube (Code Review)
+          14) Agile with JIRA (Project Management)
+          15) JMETER (Performance Testing)
+          16) Swagger (Generating Documentation for REST APIs)
+          17) SOAP UI & POSTMAN (API Testing Tools)
+          18) JENKINS (CI & CD Software)
+          19) DOCKER (Containerization Tool)
+          20) Reports Using Apache POI & IText API
+          21) Java Mail API
+          22) Apache Kafka
+          23) Redis Cache
+          24) AWS Deployment
+	  
+	  
+Part-3 : Three Mini Projects (Spring Boot & Microservices with Angular)
+-----------------------------------------------------------------------	  
+		1) Project-1
+		2) Project-2
+		3) Project-3
+
+
+Part-4 : Major Project (This keep project you can keep in Resume)
+-----------------------------------------------------------------------------
+		- Health Insurance
+		- 7 Modules
+		- Project Architecture
+		- Project Flow
+		- Batch Processing
+		- Multi Threading
+		- Exception Handling
+		- Reports 
+
+Part-5 : Interview Guide
+------------------------
+	        - Resume Preparation
+		- Profile Creation In Job Portals
+		- How to apply for Jobs
+		- How to cover gap
+		- Joining Formalities
+		- First Day in Company
+		- Last Day in company
+	        - Full and Final Settlement
+		- Do's and Don't in IT company		
+	 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

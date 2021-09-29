@@ -1,0 +1,34 @@
+Last session : IES project details & Plans 
+------------------------------------------------------------------------
+Today's session : IES architecture & IES Modules
+------------------------------------------------------------------------
+Admin
+AR (Application Registration)
+DC (Data Collection)
+ED (Eligibility Determination)
+CO (Correspondence)
+BI (Benefit Issuance)
+Batches
+Reports
+------------------------------------------------------------------------------
+-> Admin module contains below functionalities
+
+	1) Users (Case Workers & Admins) Management	
+	2) Plan Management
+
+-> Application Registration (AR) is entry point for citizen to apply for a plan. AR module will interact with SSA-WEB (Federal Govt) project to verify citizen identity
+
+-> If citizen is not belongs to RI state, he can't apply for a plan in IES.
+
+-> If citizen is belongs to RI state then Case worker will collect citizen data to apply for plan.
+
+-> DC (data collection) module is used to collect data from the citizen to apply for a plan.
+
+-> ED (Eligibility Determination) module is used to verify Citizen eligibility for the plan. ED module will communicate with ED-RULES-API.
+
+-> CO (Correspondence) module is used generate & send notices to citizens regarding their eligibility. It will send notices to citizens  thourgh post (pdf file).
+
+-> BI (Benefit Issuance) module is used to send benefit amount for approved citizens bank accounts.
+
+
+

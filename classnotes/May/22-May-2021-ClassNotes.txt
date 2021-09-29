@@ -1,0 +1,103 @@
+Last session : Git Commands
+-------------------------------------------------------------------------
+git help
+git help <command-name>
+git config
+git init
+git add <file-name>
+git add --a
+git status
+git commit -m <msg>
+git remoted add 
+git push
+git reset 
+git clone
+git checkout
+git log
+git rm
+git pull
+git stash
+
+What is staging?
+What is un-staging?
+What is un-tracked?
+----------------------------------------------------------------------------------
+Git branches & Pull request (4th video in playlist)
+Merge Conflicts (5th video in playlist)
+-----------------------------------------------------------------------------------
+
+
+Setting up existing project
+------------------------------
+-> When we join in the project, team member or TL will give project repo URL then we have to clone the project and setup workspace.
+
+	git clone <repo-url> 
+
+        git clone -b <branch-name>  <repo-url>
+
+
+Setting Up New repository
+--------------------------
+-> When we need to start new project development we need a repository for that.
+
+-> Git Repository will be created by Git Admin.
+
+-> As a developer we need to send request to Git admin team to create Git Repository for our project.
+
+---------------------------------------------------------------------------------------------
+To : gitadminteam@ibm.com
+
+cc: manager-email, scrum-master, team-members
+
+Subject : Git Repo Creation Request | IRCTC
+
+Body: 
+
+Hi Team,
+
+Please create new git repo for IRCTC project.
+
+Repository Name : IRCTC_Payments_Service
+
+Thanks,
+Ashok.
+-----------------------------------------------------------------------------------------------
+
+-> After sending this email, git admin team will create repository and will share repository url in email as a reply.
+
+-> Once repository URL is recieved, we will create project with folder strcture and will push to git repo.
+
+-> Other developers will clone the project from repository and will start development.
+
+---------------------------------------------------------------------------------------------
+
+		Repo URL : https://github.com/Ashok-IT-School/15-JRTP-SBApp.git
+
+---------------------------------------------------------------------------------------------
+
+git clone https://javaproject027am@bitbucket.org/javaproject027am/15-jrtp-03-app.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

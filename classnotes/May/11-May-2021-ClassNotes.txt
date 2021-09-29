@@ -1,0 +1,40 @@
+Yesterday's session : Maven install goal
+------------------------------------------------------------------------
+-> To create our own dependency we will use maven install goal
+
+-> Once we create dependency using maven install goal, then we can use that project as a dependency in other projects by configuring dependency details in pom.xml file.
+-------------------------------------------------------------------------
+clean, compile, test, package and install
+----------------------------------------------------------------------------------
+Today's session : Maven Repositories
+---------------------------------------------------------------------------------
+-> Maven supports 3 types of repositories
+
+		1) Central Repository
+		2) Local Repository
+		3) Remote Repository
+
+-> Central Repository will be maintained by apache org (all jars will be available)
+
+-> When we configure maven it will create local repository in our system
+		(Local Repo Path : C:\Users\<username>\.m2 )
+
+-> Every Software Company will maintain their own repository for jars that repository is called Remote Repository.
+
+-> When we add dependency in project pom.xml file then maven will search for that dependency in local repo first. If dependency available in local it will add to project build path.
+
+-> If dependency not availbale in local repo then it will download that dependency from Central Repository.
+
+Note: If we configure Remote Repository in our IDE, if dependency not available in local then it will download from Remote Repository.
+
+Note: In company we will connect to Remote REpository only
+
+-> To configure Remote Repository in IDE we will follow below steps
+
+  IDE -> Window -> Preferences -> Maven -> User Settings -> Add settings.xml file
+
+Note: Once we join in project, TL or Manager will provide settings.xml file for us
+
+
+
+

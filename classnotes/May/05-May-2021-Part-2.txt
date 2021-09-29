@@ -1,0 +1,83 @@
+Part-2 of 15-JRTP : Java Realtime Tools
+-------------------------------------------------------------------------
+-> In part-2 we will learn some realtime tools which we will use in realtime project.
+
+-> We will learn how to download and install those tools
+
+-> We will learn how to work with those tools in project
+
+-> We will learn what are common problems we will face while working with those tools and how to rectify them.
+---------------------------------------------------------------------------------
+-> After class is completed everybody has to practise the tools concept
+
+-> Sometimes in class i will ask students randomely to perform operations with tools (By giving co-host)
+
+-> Weekly assignments also will be there
+
+Note: Now we will learn few tools then will start Mini Projects development. Once first mini project is completed we will learn remaining tools.
+---------------------------------------------------------------------------------
+Maven  : Build tool
+
+Git Hub & Git : Source Code Repository Tools
+
+BitBucket : Source Code Repository Tool
+
+Source Tree : Repository client software
+
+Log4J : Logging
+
+Putty, WinScp, Splunk : Log monitoring tools
+
+Jenkins : CI & CD tool
+
+Agile JIRA : Project management tool
+
+
+
+----------------------------------------------------------------------------------
+Mini Project Development
+----------------------------------------------------------------------------------
+Junit 
+Mocking (Easy Mock & PowerMock)
+Jacoco (Code Coverage)
+SonarQube ----------Code review
+Swagger
+PostMan
+JMETER ---> Performance Testing
+--------------------------------------------------------------------------------
+2 Mini Project
+--------------------------------------------------------------------------------
+Docker
+Apache Kafka
+Redis Cache
+Apache poi api
+itext api
+---------------------------------------------------------------------------------
+3 mini project
+--------------------------------------------------------------------------------
+Major Project
+--------------------------------------------------------------------------------
+Interview Guide
+----------------------------------------------------------------------------------
+
+
+Note: Please check your email before joining 15-JRTP class daily
+
+Today we will share new zoom link with all previous videos links.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

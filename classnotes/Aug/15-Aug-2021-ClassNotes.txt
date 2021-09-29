@@ -1,0 +1,9 @@
+Last Session : IES Modules Intro & Admin Module details
+---------------------------------------------------------------------------------
+Today's session : Admin & AR module screens details
+----------------------------------------------------------------------------------
+
+-> Admin module contains below 2 functionalities
+
+		1) Accounts Management
+		2) Plan Management

@@ -1,0 +1,25 @@
+1) Don't use Generic Exception. Create a dedicated exception and use it.
+
+2) Instread of using printStackTrace() log or re-throw the exception
+
+3) When class doesn't have instance method declare private constructor
+
+4) Application should not contain duplicate code
+
+5) Use try with resources for closing files
+
+6) String literals should be declared in constants file
+
+7) Remove un-necessary curley braces when we have single stmt in that
+
+8) Constructor should be declared after variables
+
+9) Unused import stmts should be removed
+
+10) Commented code should be removed
+
+11) Instead of StringBuffer use StringBuilder
+
+12) Return variable directley from the method when it is not used
+
+13) Don't use deprecated methods

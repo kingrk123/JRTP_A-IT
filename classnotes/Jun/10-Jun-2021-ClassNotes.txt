@@ -1,0 +1,19 @@
+Last session : We have implemented below components in application
+
+1) Entity class  (Mapping with DB table)
+2) Repository interface ( To perform DB Operations )
+3) Service Interface (Business methods)
+4) Service Implementation class (Business methods implementation)
+-------------------------------------------------------------------------
+Today's session : Controller classes Implementation
+-------------------------------------------------------------------------
+-> In Realtime, for every screen one controller will be created. That controller class will contain methods to handle requests coming from that screen.
+
+-> In Our 'Contact Application' we have 2 screens so we will create 2 controllers.
+
+-> In Spring MVC we have @Controller annotation to represent java class as Controller class.
+
+-> Inside controller class we will write methods to handle requests.
+
+
+

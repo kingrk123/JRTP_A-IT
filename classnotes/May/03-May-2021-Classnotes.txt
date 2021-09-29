@@ -1,0 +1,79 @@
+Last session (27-Apr) : Types of projects in IT companies
+------------------------------------------------------------------------
+
+-> In IT companies we can see 3 types of projects
+
+		1) Scratch development (10 %)
+
+		2) Maintenence  (75 %)
+			- Change Requests
+			- Enhancements
+			- Bug Fixing
+
+		3) Migration (15 %)
+-------------------------------------------------------------------------
+
+-> Types of companies (product, service and outsourcing)
+
+-> Type of projects (scractch, maintenence and migration)
+
+-------------------------------------------------------------------------
+Today's session : Types of Teams
+-------------------------------------------------------------------------
+-> In IT companies we can see 2 types of teams
+
+		1) Onshore Team
+
+		2) Offshore Team
+
+-> The team which is workig in client location is called as OnShore team.
+
+-> The team which is workig in non-client location is called as Offshore team.
+
+-> Offshore and OnShore team members will communicate through Bridge calls.
+
+	Ex : Microsoft Teams software, zoom
+
+
+-> Onshore and offshore team members will share project related documents using Sharepoint.
+
+	Ex: BRD, FDD, Test Cases, Code Review Reports etc..
+
+
+-----------------------------------------------------
+Types of jobs
+------------------------------------------------------
+
+-> In IT companies we can see 2 types of jobs
+
+		1) Permanent job
+
+		2) Contract job
+
+-> If we get permanent job then we will get some benefits from company
+
+		1) Provident Fund (PF) - 12% on Basic salary
+				employee contribution + employer contribution
+
+		If you pay 4500 pf  then company will gv 4500 => total 9000 
+
+		2) Medical Coverage (20 lakhs coverage)
+
+		3) Notice Period (2 months)
+
+
+-> In contract jobs security will not be there and benefits also very less.
+
+
+----------------------------------------------------------------------------------
+
+Types of companies (product, service and outsourcing)
+Types of projects (scratch, maintenence, migration)
+Types of teams (onshore, offshore)
+Types of jobs (Permanent and contract)
+
+----------------------------------------------------------------------------------
+
+
+
+

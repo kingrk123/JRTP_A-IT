@@ -1,0 +1,41 @@
+Last session : We have noted down lessons learnt in coding
+-------------------------------------------------------------------------
+Today's session : 03-Mini Project
+------------------------------------------------------------------------
+-> In this 3rd minit project we will learn below things
+
+	1) How to implement dynamic search operations
+
+	2) How to implement Server Side Pagination
+
+	3) How to generate reports in Excel and Pdf formats
+
+	
+
+
+
+//category selected
+select * from products where category='Mobiles & Accessories';
+
+//category & brand selected
+select * from products where category = 'Mobiles & Accessories' and brand='SAMSUNG';
+
+//category , brand, budget selected
+select * from products where category = 'Mobiles & Accessories' and brand='SAMSUNG' and price <=30000;
+
+//category, brand, budget, RAM selected
+select * from products where category = 'Mobiles & Accessories' and brand='SAMSUNG' and price <=30000 and RAM = 4;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

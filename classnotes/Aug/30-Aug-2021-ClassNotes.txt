@@ -1,0 +1,211 @@
+Last session : Project Architecture
+----------------------------------------------------------------------------------
+Today's session : Interview Questions , do's & don'ts in IT company
+		  First Day & Last Day in IT company
+----------------------------------------------------------------------------------
+
+Interview Questions For Experienced People
+------------------------------------------
+1) Tell me about yourself (your details, company details & project details)
+
+2) What are your roles & responsibilities in current project?
+
+3) Explain about your project Architecture?
+
+4) In which modules you have involved in your project?
+
+5) Can you explain about your module architecture?
+
+Note: The above interview questions are quite common in all rounds of interview.
+
+6) Howmuch you rate yourself in Java out of 5 ?
+
+Note: From here technical questions will start (Core Java, Servlets, Hibernate, Spring, Spring Boot, Rest API & Microservices).
+
+********* After technical questions, they will ask from tools **********
+
+7) What is the code repository using in your project?
+
+8) Have you ever faced conflicts in Repository?
+
+9) Have you ever worked with Branches in Repository?
+
+10) Who will create repository & branches in your project?
+
+11) Who will assign task for you?
+
+12) What is sprint & scrum ?
+
+13) What is Story & Story Points?
+
+15) How team colloboration will happen ?
+
+16) What is Unit Testing?
+
+17) How you are performing Unit testing in your project?
+
+18) Can you explain some junit annotations?
+
+19) Can you explain about Mocking?
+
+20) Can we perform Unit testing for private methods?
+
+21) What is Code Coverage?
+
+22) Do you know anything about Logging?
+
+23) How you will fix Production Issue?
+
+24) How you will check logs in your project?
+
+25) How you will perform Code Review?
+
+26) What are the challenges you faced in project?
+
+27) What is the toughest situation that you have gone throug in your project?
+
+28) How you handle exceptions in your project?
+
+
+-> 85 PM round questions & answers videos available in our channel
+
+-> 50 Spring MVC Questions & Answers videos available in our channel
+
+------------------------------------------------------------------------
+
+Do's in IT Company
+------------------
+1) If we don't know about any tool/proces, don't hesitate to ask your team members
+
+2) Take functional KT on the Project from Team members
+
+3) Ask your manager/scrum master about your roles & responsibilities in project
+
+4) If you are planning for any vacation, inform to your manager/scrum master one month in advance. This is called as Planned Leave.
+
+5) If you are taking any un-planned leave, send mail/message to your manager/team lead/scrum master.
+
+6) If any team member ask for any help, we have to do it.
+
+7) Always maintain good relationship with team members
+
+8) Always we should be in touch with our team members
+
+9) We should maintain good networking in company
+
+10) For every 2 weeks/4 weeks setup one-to-one meeting with your manager/team lead/scrum master to know about your performance.
+
+
+Dont's in IT Company
+--------------------
+-> Don't open Gmail, Facebook kind of apps in office system
+
+-> Don't send any personal mails to gmail from office system
+
+-> Don't ask your team members salary
+
+-> If any team member asks about our package, we should not reveal it.
+
+-> Don't tell to your team members about your Job trails
+
+-> Don't do any negative comments on any team member
+
+
+Daily Schedule in IT Company
+----------------------------
+2:00 PM  : Login
+
+2:00 - 2:30 PM : Mails Checking
+
+2:30 - 3:00 PM : Coffee Break
+
+3:00 - 5:30 : Work
+
+5:30 - 6:00 PM : Snacks break
+
+6:00 - 8:00 : Work
+
+8:00 - 11:00 : Meetings
+
+11:00 PM : Logout
+
+
+
+
+
+
+
+
+
+First Day In IT Company
+-----------------------
+-> On your joining date, one HR will be allocated to you (On Boarding HR)
+
+-> On Boarding HR will tell you On Boarding Process
+
+-> On Boarding Process means Joining Formalities
+
+-> First day mostly we will spend with On Boarding HR for completing Joining Formalities
+
+  Ex: Emp Docs fill up, pf form fill up, salary accnt opening, ID card collection etc....
+
+-> Once Joining formalities are completed, On Boarding HR will introduce us to Project Manager.
+
+-> Manager will guide us to join in project
+
+
+Last day in company
+-------------------
+-> We will submit all belongings back to company
+
+-> Submit Laptop to IT department
+
+-> Submit ID card to Security Department
+
+-> Meet all your team members and managers Say Bye to them
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

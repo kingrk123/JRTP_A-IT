@@ -1,0 +1,75 @@
+Last Session : What is Rule Engine & Drools Example
+----------------------------------------------------------------------------------
+-> Rule Engine is a software system which is used to implement decision making systems.
+
+-> By Using rule engines we can check business rule as per given requirement.
+
+-> By using rule engines we can seperate our business logic and business rules
+
+-> JBOSS drools is one of the open source rule engine we can use in our applications.
+----------------------------------------------------------------------------------
+-> We will write business rules in DRL file
+
+Syntax of DRL :
+
+rule "rule-name-1"
+
+  when 
+	//conditions to check
+  then
+	//action to perform
+
+end
+
+rule "rule-name-2"
+
+  when
+	//conditions to check
+  then
+        //action to perform
+end
+----------------------------------------------------------------------------------------------
+Steps to develop ED-RULES-API
+------------------------------------------------------------------------------------------
+1) Create Spring Boot application with below dependencies
+
+	i)spring-boot-starter-web
+	ii) drools-compiler
+	iii) devtools
+	iv) swagger
+	v) project-lombok
+
+2) Create Request & Response Binding Classes
+
+	Request class will represent ---> citizen-data
+	Response class will represent --> Citiezen-eligibility-data
+
+3) Create DRL files (Rules files) in src/main/resources folder
+
+	 For every plan seperate DRL file will be available
+
+4) Create Service Layer method to execute DRL file based on Plan Name
+
+5) Create Rest Controller to handle Request (input=citizen-data, output=citizen-elig-data)
+
+6) Create Swagger Config class for documentation
+
+7) Run the application and test it.
+------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

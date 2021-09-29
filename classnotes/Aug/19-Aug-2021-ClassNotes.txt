@@ -1,0 +1,105 @@
+Yesterday's session : ED-RULES-API
+----------------------------------------------------------------------------------------------
+-> ED-RULES-API contains Rule Engine to execute business rules
+
+-> RI Govt decided business rules for every plan
+
+-> Every Plan having set of rules
+
+-> When request comes to ED-RULES-API with citizen data as input then ED-RULES-API will execute business rules of the plan and will decide citizen eligibility for the plan.
+
+-> If citizen data satisfying Plan rules then citizen will be approved for the plan else citizen will be denied for the plan.
+----------------------------------------------------------------------------------------------
+-> Eligibility Determination Module will send request to ED-RULES-API then ED-RULES-API will process the request and will send response to Eligibility Determination module.
+
+-> After recieving response, ED module will store Citizen Eligibility details into Database tables.
+
+-> After Eligibility Determination got completed then Correspondence module comes into picture
+--------------------------------------------------------------------------------------------
+What is Correspondence Module?
+----------------------------------------------------------------------------------------------
+-> Correspondence module is responsible to send Notices to citizens
+
+-> Correspondence module will send below Notices
+
+		1) SSN Missing Notice
+		2) Birth Certificate Missing Notice
+		3) Passport Missing Notice
+		4) Additional Documentation Required Notice
+		5) Plan Approved Notice
+		6) Plan Denied Notice
+		7) Plan Renewal Reminder Notice
+		8) Plan Termination Notice etc..
+
+-> Correspondence Module contains nightly batches to generate Notices to citizens.
+
+---------------------------------------------------------------------------------------------
+What is Batch?
+-----------------------------------------------------------------------------------------------> Batch is used to perform bulk operation
+
+-> Below are the some usecases to implement batch programs
+
+	i) Sending Bulk SMS
+	ii) Sending Bulk Email
+	iii) Salary Credit For Company Employees
+	iv) NEFT Transactions
+	v) Generating Bank Statement For Account Holders
+	vi) Credit Card Statement generation
+	vii) Sending Notices to citizens
+
+-> In Realtime Every batch will have frequency. It will decide when that batch should execute
+
+		i) DAILY
+		ii) WEEKLY
+		iii) MONTHLY
+		iv) QUARTERLY
+		v) HALF-YEARLY
+		vi) YEARLY
+
+-> Based on frequency we will Schedule batch execution using SCHEDULING tools
+
+-> Below are the famous scheduling tools available in the market
+
+		1) OPCON SCHEDULAR
+		2) AUTOSYS SCHEDULAR
+
+-> If we want to use Opensource scheudling then we can use below
+
+		1) Spring Schedular
+		2) Quartz Schedular
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

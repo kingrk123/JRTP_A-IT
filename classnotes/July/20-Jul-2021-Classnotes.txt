@@ -1,0 +1,74 @@
+Last session : Handling User-Defined Exceptions
+------------------------------------------------------------------------
+-> As per our requirement we can create our own Exceptions in the application.
+
+public class NoDataFoundException extends Exception{
+   
+      public NoDataFoundException(){ }
+
+      public NoDataFoundException(String msg){
+		super(msg);
+      }   
+}
+
+-> To handle exception in our application, we will create Global Exception Handler Class using @RestControllerAdvice annotation.
+
+
+-> To map exception to particular method we will use @ExceptionHandler annotation.
+
+------------------------------------------------------------------------
+Implement Logging In Application
+------------------------------------------------------------------------
+1) What is Logging?
+
+2) Why we need logging?
+
+3) Logger, Layout and Appender
+
+4) Log Levels
+
+5) Logging methods
+------------------------------------------------------------------------
+
+-> Logging is the process of storing application execution details.
+
+-> When our application running in local system we can use debugging to understand execution flow and we can identify bugs available in source code.
+
+-> When application is executing in higher environment like DEV, QA, UAT, PILOT and PROD we can't debug the code to understand the flow. To understand application execution flow we will use log messages.
+
+-> Logger is a class which provided methods to perform logging in our application.
+
+-> Layout will decide format of log msg
+
+		1) SimpleLayout
+		2) PatternLayout
+
+-> Appender will decide destination for storing log message
+
+		1) ConsoleAppender
+		2) FileAppender
+		4) JdbcAppender
+		5) MailAppender etc...
+
+-> Logging is having some levels those levels will decide when to print that log msg.
+
+		1)trace
+		2)debug
+		3)info
+		4)warn
+		5)error
+		6)fatal
+		7)off
+
+-> For every log level Logger class provided method.
+
+
+
+
+
+
+
+
+
+
+

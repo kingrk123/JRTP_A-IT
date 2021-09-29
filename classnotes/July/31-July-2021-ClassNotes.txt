@@ -1,0 +1,67 @@
+Last session : Dynamic Search Functionality Implementation
+-------------------------------------------------------------------------
+Today's session : Pagination
+-------------------------------------------------------------------------
+
+-> In every application it is common requirement to display data in table format.
+
+-> If we have one lakh records in db table, if we display all those 1 lakh records in application page it looks very ugly.
+
+-> To avoid this problem we will use pagination concept.
+
+-> The process of dividing total records into multiple pages is called Pagination.
+
+-> Pagination can be implemented in 2 ways
+
+		1) Server Side Pagination
+		2) Client Side Pagination
+-------------------------------------------------------------------------
+Server Side Pagination
+------------------------------------------------------------------------
+-> In this process for every page DB query will execute to retrieve data required for that page.
+-------------------------------------------------------------------------Client Side Pagination
+------------------------------------------------------------------------
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.js">
+	
+</script>
+
+<script type="text/javascript"
+	src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js">
+	
+</script>
+
+
+<script>
+$(document).ready(function() {
+    $('#mobilesTbl').DataTable({ });
+});
+</script>
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

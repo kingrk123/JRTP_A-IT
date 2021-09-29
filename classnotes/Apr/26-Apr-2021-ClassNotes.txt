@@ -1,0 +1,86 @@
+JAVA REALTIME PROJECT (FULLSTACK DEVELOPMENT) - ONLINE TRAINING
+-----------------------------------------------------------------
+Start date : 22-Apr-2021
+------------------------------------------------------------------------
+Session-1 (22-Apr) : Pre-requisites & Course-content
+		    (https://www.youtube.com/watch?v=exSnWlLdT7E)
+	
+Session-2 (23-Apr) : Doubts Clarification for students
+		    (https://www.youtube.com/watch?v=f_kGbvI3CFg)
+
+24-Apr & 25-Apr : No classes
+-----------------------------------------------------------------------
+Session-3 (26-Apr-2021) : Part-1 (Software Industry Details
+-----------------------------------------------------------------------
+
+-> Software companies can be categorized into 3 types
+
+		1) Product Based Companies
+		2) Service Based Companies
+		3) Outsourcing Companies
+
+Product Based Companies
+------------------------
+-> The companies which will develop product/project and selling to the people in the market is called as Product Based Companies.
+
+-> For Product Based Companies clients will not be available they will have only Customers.
+
+	Ex : Microsoft, HP, IBM, Google etc...
+
+-> In Product Based Companies interviews, they will concentrate mainly on below concepts
+
+		1) Data Structures
+		2) Algorithms
+		3) Design Patterns
+		4) System Design
+		5) Problem Solving
+		6) Time Complexity and Space Complexity
+
+Note: In Product Based Companies they will conduct Coding Test using Hacker Ranker or Hacker Earth.
+
+-> Product Based Companies provide high packages
+
+	No.of.years of exp * 6 Lakhs
+	3 * 6 = 18 Lakhs
+
+Service Based Companies
+-----------------------
+-> The companies which are providing services to others are called as Service Based Companies.
+
+-> Service Based Companies will deveop the projects based on client given requirements.
+
+	Ex : TCS, Wipro, Infy, Capgemini, Accenture, Cognizent, Deloitte etc..
+
+-> In Service Based Companies interviews, they will ask questions related to latest technologies
+
+		1) Spring Boot
+		2) REST Apis
+		3) Microservices
+		4) Fullstack development
+
+-> Below package structure will be there in Service based companies
+
+		Years of exp * 3 lakhs
+
+-> In service based companies onsite opportunity will be there.
+
+
+Outsourcing Companies
+------------------------
+-> Outsourcing companies will provide employees to other companies on contract basis.
+
+	Ex: Magna info Tech, SourceOne mgmt etc..
+
+Course Details
+------------------
+15-JRTP Course Fee : 6000 INR (Angular-11 FREE)
+Daily class notes and class recording will be shared
+class notes life time access
+class recording will be avaialble for only 2 days
+
+Spring Boot & Microservices : 5000 INR
+
+
+
+
+

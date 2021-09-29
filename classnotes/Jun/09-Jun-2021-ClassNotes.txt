@@ -1,0 +1,28 @@
+Last session : 01-Mini Project-Environment-Setup
+-------------------------------------------------------------------------
+
+-> Spring boot provided embedded server to run web applications.
+
+-> When we add 'spring-boot-starter-web' dependeny 'Tomcat' server will come as default embedded container. It runs on 8080 port Number.
+
+-> To change embedded server port number we can use below property in application.properties file
+
+		server.port = 9090
+
+-> For temporary purpose we can use H2 database. It is embedded database.
+
+-> If application is running then h2 db will be available and if application stopped then h2 db will not be available.
+-------------------------------------------------------------------------
+Today's session : Coding for 01-Mini Project
+-------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

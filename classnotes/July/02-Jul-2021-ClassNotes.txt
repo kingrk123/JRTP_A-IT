@@ -1,0 +1,106 @@
+Last session : 2nd Mini Project Setup
+-------------------------------------------------------------------------
+Today's session : Reading application message from yml file
+------------------------------------------------------------------------
+
+-------------------------application.yml-------------------------------
+server:
+  port: 9090
+spring:
+  datasource:
+    username: sa
+    password: null
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: javaproject.02.7am@gmail.com
+    password: 452
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: true
+          auth: true
+app:
+  messages:
+    welcomeMsg: Welcome To Ashok IT..!!
+    greetMsg: Good Morning...!!
+-------------------------AppProperties.java-----------------------------
+package com.ashokit.props;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ConfigurationProperties(prefix = "app")
+@EnableConfigurationProperties
+public class AppProperties {
+
+	private Map<String, String> messages = new HashMap<>();
+
+	public Map<String, String> getMessages() {
+		return messages;
+	}
+
+	public void setMessages(Map<String, String> messages) {
+		this.messages = messages;
+	}
+
+}
+------------------------AppConstants.java-------------------------------
+package com.ashokit.constants;
+
+public class AppConstants {
+
+	public static final String WELCOME_MSG = "welcomeMsg";
+
+	public static final String GREET_MSG = "greetMsg";
+
+}
+
+------------------------------WelcomeRestController.java----------------
+package com.ashokit.rest;
+
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ashokit.constants.AppConstants;
+import com.ashokit.props.AppProperties;
+
+@RestController
+public class WelcomeRestController {
+
+	@Autowired
+	private AppProperties appProps;
+
+	@GetMapping("/welcome")
+	public String getWelcomeMsg() {
+		Map<String, String> msgs = appProps.getMessages();
+		String msg = msgs.get(AppConstants.WELCOME_MSG);
+		return msg;
+	}
+
+	@GetMapping("/greet")
+	public String getGreetMsg() {
+		Map<String, String> messages = appProps.getMessages();
+		String greetMsg = messages.get(AppConstants.GREET_MSG);
+		return greetMsg;
+	}
+}
+------------------------------------------------------------------------
